@@ -40,7 +40,7 @@ def head(title, desc, path):
 
 def header(active):
     items = [("index.html", "Home"), ("products.html", "Products"),
-             ("hard-drive-recovery-software.html#pricing", "Pricing"), ("#", "Guides"), ("#", "Support")]
+             ("hard-drive-recovery-software.html#pricing", "Pricing"), ("contact.html", "Support")]
     nav = "".join(f'<a href="{h}"{" class=on" if t==active else ""}>{t}</a>' for h, t in items)
     langs = "".join(
         f'<li><a href="#"{" class=cur" if c=="en" else ""}>{n}{"" if c=="en" else " <small>coming soon</small>"}</a></li>'
@@ -59,8 +59,8 @@ FOOTER = f"""<footer class="ftr"><div class="wrap">
 <div><img src="img/logo.png" alt="Data Clinic" width="140" height="24" style="margin-bottom:12px">
 <p>Professional data recovery software from Data Clinic Ltd — built by a data recovery lab working since 2002.</p></div>
 <div><h4>Products</h4><a href="hard-drive-recovery-software.html">Recovery for Hard Drives</a><a href="memory-card-recovery.html">Memory Card Recovery (free)</a><a href="hard-drive-recovery-software.html#pricing">Pricing</a><a href="hard-drive-recovery-software.html#faq">FAQ</a><a href="{DL}">Download</a></div>
-<div><h4>Help</h4><a href="#">Guides</a><a href="#">Contact support</a><a href="{CO_UK}">UK data recovery lab</a></div>
-<div><h4>Legal</h4><a href="#">Refund policy</a><a href="#">Licence agreement</a><a href="#">Privacy</a></div>
+<div><h4>Help</h4><a href="contact.html">Contact support</a><a href="{CO_UK}">UK data recovery lab</a></div>
+<div><h4>Legal</h4><a href="refund-policy.html">Refund policy</a><a href="licence-agreement.html">Licence agreement</a><a href="privacy.html">Privacy</a></div>
 </div>
 <div class="legal">© 2026 Data Clinic Ltd · Company no. 04417174 · VAT GB 793061422 · The Pavilions, Bridge Hall Lane, Bury BL9 7NX, United Kingdom · Windows is a trademark of Microsoft Corporation.</div>
 </div></footer>
@@ -327,6 +327,50 @@ mc = head("Free Memory Card Recovery Software for SD & microSD — Data Clinic",
 </div></section>
 </main>
 """ + FOOTER
+
+# ---------------- LEGAL + CONTACT ----------------
+def docpage(fn, title, desc, frag, note):
+    body = open("legal/" + frag).read()
+    return (head(title, desc, fn) + header("") + '<main class="doc"><div class="wrap narrow">'
+            + (f'<p class="docnote">{note}</p>' if note else "") + body + "</div></main>" + FOOTER)
+
+SAME = ('This is the same policy that applies on our UK website, dataclinic.co.uk. '
+        'Data Clinic Ltd sells and supports the software on both sites.')
+docs = [
+    ("refund-policy.html", "Refund policy — Data Clinic Recovery for Hard Drives",
+     "Refund policy for Data Clinic Recovery for Hard Drives licences.", "refund.frag.html", SAME),
+    ("licence-agreement.html", "Licence agreement — Data Clinic Recovery for Hard Drives",
+     "End-user licence agreement for Data Clinic Recovery for Hard Drives.", "licence.frag.html", SAME),
+    ("privacy.html", "Privacy policy — Data Clinic",
+     "How Data Clinic Ltd collects, uses and protects your information.", "privacy.frag.html", SAME),
+]
+for fn, t, d, frag, note in docs:
+    open(fn, "w").write(docpage(fn, t, d, frag, note))
+
+contact = head("Contact support — Data Clinic Recovery Software",
+               "Get help with Data Clinic data recovery software: licences, downloads, refunds and technical questions.",
+               "contact.html") + header("Support") + f"""<main class="doc"><div class="wrap narrow">
+<h1>Contact support</h1>
+<p class="lead">Questions about a licence, a download, a refund or a scan? Email us and a member of the Data Clinic team will reply, usually within one working day (UK time, Monday to Friday).</p>
+<div class="contactcard">
+<p><b>Email:</b> <a href="mailto:customerservices@dataclinic.co.uk?subject=Software%20support">customerservices@dataclinic.co.uk</a></p>
+<p>To help us answer quickly, please include the program name and version (shown in the program's Help menu), your Windows version, and what you were doing when the problem happened. If you bought a licence, include the email address you used at checkout.</p>
+</div>
+<h2>Before you write</h2>
+<ul>
+<li><b>Lost your licence key?</b> Tell us the email address you paid with and we'll resend it.</li>
+<li><b>Want a refund?</b> See the <a href="refund-policy.html">refund policy</a> for what's covered and how to ask.</li>
+<li><b>Drive clicking, not detected, or reported as failing?</b> Software can't fix a physical fault. Stop using the drive. In the UK, our <a href="{CO_UK}">data recovery lab</a> can help.</li>
+</ul>
+<p class="small">Data Clinic Ltd · Company number 04417174 · The Pavilions, Bridge Hall Lane, Bury BL9 7NX, United Kingdom</p>
+</div></main>""" + FOOTER
+open("contact.html", "w").write(contact)
+
+pages = ["", "products.html", "hard-drive-recovery-software.html", "memory-card-recovery.html",
+         "contact.html", "refund-policy.html", "licence-agreement.html", "privacy.html"]
+open("sitemap.xml", "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + "".join(f"<url><loc>https://www.dataclinic.com/{p}</loc></url>\n" for p in pages) + "</urlset>\n")
+
 open("products.html","w").write(hub)
 open("memory-card-recovery.html","w").write(mc)
 

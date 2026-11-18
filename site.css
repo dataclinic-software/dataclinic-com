@@ -158,3 +158,11 @@ section{padding:76px 0}
 .badge{align-self:flex-start;font-size:12px;font-weight:700;border-radius:999px;padding:3px 11px;background:#e8eef7;color:var(--navy);margin-bottom:10px}
 .badge.free{background:#e6f7ef;color:#137a4a}
 @media (max-width:900px){.prods{grid-template-columns:1fr}}
+
+/* legal + contact pages */
+.doc{padding:48px 0 64px}.wrap.narrow{max-width:800px}
+.doc h1{font-size:34px;margin:0 0 16px}.doc h2{font-size:22px;margin:30px 0 10px}.doc h3{font-size:18px;margin:22px 0 8px}
+.doc p,.doc li{line-height:1.65;color:#3a4250}.doc ul,.doc ol{padding-left:22px}.doc li{margin:6px 0}
+.docnote{background:#eef4fb;border-left:4px solid #1d6fd6;padding:10px 14px;border-radius:6px;font-size:14px}
+.contactcard{background:#f6f8fb;border:1px solid #e3e8ef;border-radius:10px;padding:18px 20px;margin:18px 0}
+.doc .small{font-size:13px;color:#6b7480}
