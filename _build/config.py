@@ -37,7 +37,7 @@ PAY = {
 # client_reference_id labels the Stripe checkout session by origin (agreed with the Software project 21-11-2026)
 PAY_REF = "web_com_"
 
-SUPPORT_EMAIL = "customerservices@dataclinic.co.uk"
+SUPPORT_EMAIL = "support@dataclinic.com"
 LICENCE_KEY_API = CO_UK + "/software-licence/key/"
 
 COMPANY = ("Data Clinic Ltd · Company no. 04417174 · VAT GB 793061422 · "
