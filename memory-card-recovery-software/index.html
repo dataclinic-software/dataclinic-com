@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Memory Card &amp; SD Card Recovery Software for Windows | Data Clinic</title>
 <meta name="description" content="Free software to recover deleted and formatted photos and videos from SD and microSD cards. Read-only, no registration, checks every photo for damage. Windows 10/11.">
-<meta name="robots" content="noindex,follow">
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.dataclinic.com/memory-card-recovery-software/">
 <link rel="alternate" hreflang="en" href="https://www.dataclinic.com/memory-card-recovery-software/">
 <link rel="alternate" hreflang="en-GB" href="https://www.dataclinic.co.uk/data-recovery-software-free-download-from-data-clinic-ltd/">
@@ -90,7 +90,7 @@
 <p>Data recovery software from Data Clinic Ltd, a data recovery company working since 2002.</p></div>
 <div><h4>Software</h4><a href="/hard-drive-recovery-software/">Recovery for Hard Drives</a><a href="/memory-card-recovery-software/">Recovery for Memory Cards (free)</a><a href="/which-software/">Which one do I need?</a><a href="/pricing/">Pricing</a><a href="/download/">Downloads</a></div>
 <div><h4>Help</h4><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/about/">About Data Clinic</a><a href="https://www.dataclinic.co.uk/">UK data recovery lab</a></div>
-<div><h4>Legal</h4><a href="/legal/refund-policy/">Refund policy</a><a href="/legal/licence-agreement/">Licence agreement</a><a href="/legal/privacy/">Privacy</a></div>
+<div><h4>Legal</h4><a href="/legal/refund-policy/">Refund policy</a><a href="/legal/licence-agreement/">Licence agreement</a><a href="/legal/privacy/">Privacy</a><a href="#" onclick="return dcCookieSettings()">Cookie settings</a></div>
 </div>
 <div class="legal">© 2026 Data Clinic Ltd · Company no. 04417174 · VAT GB 793061422 · Registered office: The Pavilions, Bridge Hall Lane, Bury BL9 7NX, United Kingdom. Windows is a trademark of Microsoft Corporation; Mac, APFS and FileVault are trademarks of Apple Inc. Other names are the property of their owners.</div>
 </div></footer>
@@ -100,5 +100,18 @@ function dcCloseUk(){try{localStorage.setItem('dcUkBar','x')}catch(e){}document.
 (function(){try{if(localStorage.getItem('dcUkBar'))return}catch(e){}
 var l=(navigator.languages||[navigator.language||'']).join(',');var tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
 if(/en-GB/i.test(l)||tz==='Europe/London'){document.getElementById('ukbar').hidden=false}})();
+</script>
+<div class="ckbar" id="ckbar" hidden role="dialog" aria-label="Cookie choice"><div class="wrap"><p>May we use Google Analytics cookies to see which pages help people? Nothing is set unless you say yes. <a href="/legal/privacy/">Privacy</a></p>
+<div class="ckbtns"><button class="btn sm ghost" onclick="dcConsent('n')">No, thanks</button><button class="btn sm" onclick="dcConsent('y')">Yes, that's fine</button></div></div></div>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+function dcGa(){if(window.dcGaOn)return;window.dcGaOn=1;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-6QEBHWDTVL';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-6QEBHWDTVL',{anonymize_ip:true})}
+function dcConsent(v){try{localStorage.setItem('dcCk',v)}catch(e){}document.getElementById('ckbar').hidden=true;if(v==='y')dcGa()}
+function dcCookieSettings(){document.getElementById('ckbar').hidden=false;return false}
+function dcEv(n,p){if(window.dcGaOn)gtag('event',n,p||{})}
+(function(){var v=null;try{v=localStorage.getItem('dcCk')}catch(e){}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false})();
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
+if(/\.exe($|\?)/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname});
+else if(/buy\.stripe\.com/.test(h))dcEv('dc_com_buy_click',{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname})});
 </script>
 </body></html>

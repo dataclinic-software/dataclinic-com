@@ -468,7 +468,7 @@ LICENCE = page("/licence/", "Thank you for your order — Data Clinic Recovery f
 <div id="ty-pending"><p class="intro">Your key is on its way…</p></div>
 <div id="ty-ready" hidden>
 <p class="intro">Your licence key:</p>
-<div class="keybox"><code id="ty-key"></code><button class="btn sm" id="ty-copy">Copy</button></div>
+<div class="keybox"><button class="btn" id="ty-copy">Copy licence key</button><code id="ty-key"></code></div>
 <p id="ty-type" class="muted"></p><p id="ty-valid" class="muted"></p>
 <p>Open Data Clinic Recovery for Hard Drives, choose <b>Help → Licence…</b> (or enter it on the <b>Save files</b> step), paste the key and press <b>Apply key</b>. We've also emailed it to you.</p>
 </div>
@@ -485,14 +485,14 @@ var sid=null;try{{sid=new URLSearchParams(location.search).get('session')}}catch
 var done=false;function show(id){{if(done)return;done=true;$('ty-pending').hidden=true;$(id).hidden=false}}
 if(!sid){{show('ty-mail');return}}
 var t0=Date.now(),fails=0;
-function ready(j){{show('ty-ready');$('ty-key').textContent=j.key;var t=j.type||'',y=!!j.renews||/1y|year/i.test(t);$('ty-type').textContent=TYPES[t]||'';
+function ready(j){{show('ty-ready');dcEv('dc_com_licence_key_shown',{{type:j.type||''}});$('ty-key').textContent=j.key;var t=j.type||'',y=!!j.renews||/1y|year/i.test(t);$('ty-type').textContent=TYPES[t]||'';
  if(y){{$('ty-valid').textContent=j.renews?('Renews automatically on '+fmt(j.renews)):'Renews automatically each year.'}}else if(j.expires){{$('ty-valid').textContent='Valid until '+fmt(j.expires)+' (does not renew)'}}}}
 function tick(){{if(done)return;if(Date.now()-t0>120000){{show('ty-late');return}}
  fetch(API+'?session='+encodeURIComponent(sid),{{cache:'no-store',credentials:'omit'}}).then(function(r){{if(r.status===429||r.status===400){{show('ty-late');return null}}return r.json()}}).then(function(j){{
   if(done)return;if(j&&j.status==='ready'&&j.key){{ready(j);return}}if(j&&j.status==='expired'){{show('ty-mail');return}}setTimeout(tick,3500)}})
  ['catch'](function(){{if(++fails>=3){{show('ty-late');return}}setTimeout(tick,3500)}})}}
 tick();
-$('ty-copy').addEventListener('click',function(){{var b=this;try{{navigator.clipboard.writeText($('ty-key').textContent).then(function(){{b.textContent='Copied'}})}}catch(e){{}}}});
+$('ty-copy').addEventListener('click',function(){{var b=this;try{{navigator.clipboard.writeText($('ty-key').textContent).then(function(){{b.textContent='Copied ✓';dcEv('dc_com_key_copied')}})}}catch(e){{}}}});
 }})();
 </script>
 """, noindex=True)
@@ -518,8 +518,10 @@ PRIVACY = legal("privacy.frag.html", "/legal/privacy/", "Privacy policy — Data
                 "How Data Clinic Ltd handles personal information, including what its recovery software sends.")
 PRIVACY = PRIVACY.replace('<section class="tight"><div class="wrap narrow prose legaldoc">',
                           '<section class="tight"><div class="wrap narrow prose legaldoc"><div class="note-box">'
-                          '<b>This website (dataclinic.com)</b> does not set cookies, use analytics or collect '
-                          'personal information. It loads only its own files; downloads and some links go to our UK '
+                          '<b>This website (dataclinic.com)</b> sets no cookies unless you agree. If you choose "Yes" in the cookie '
+                          'message, it uses Google Analytics cookies to count visits and see which pages help people; '
+                          'you can change your mind at any time with "Cookie settings" at the bottom of every page. '
+                          'It does not collect personal information. Downloads and some links go to our UK '
                           f'website, <a href="{CO_UK}/">dataclinic.co.uk</a>. The policy below is Data Clinic Ltd\'s '
                           'privacy policy and covers our software.</div>', 1)
 

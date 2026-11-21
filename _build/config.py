@@ -4,7 +4,7 @@ SITE = "https://www.dataclinic.com"
 CO_UK = "https://www.dataclinic.co.uk"
 
 # Pre-launch: every page carries noindex until Chris approves launch. Flip to True at launch.
-LAUNCHED = False
+LAUNCHED = True
 
 HDD = {
     "name": "Data Clinic Recovery for Hard Drives",
@@ -38,6 +38,7 @@ PAY = {
 PAY_REF = "web_com_"
 
 SUPPORT_EMAIL = "support@dataclinic.com"
+GA4_ID = "G-6QEBHWDTVL"  # GA4 property 565403697 "dataclinic.com (software site)", account DC (April 2022)
 LICENCE_KEY_API = CO_UK + "/software-licence/key/"
 
 COMPANY = ("Data Clinic Ltd · Company no. 04417174 · VAT GB 793061422 · "
