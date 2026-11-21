@@ -1,8 +1,9 @@
 """Shared page shell for dataclinic.com."""
-import html, json
+import html, json, hashlib, os
 from config import *
 
 E = html.escape
+CSS_V = hashlib.md5(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "site.css"), "rb").read()).hexdigest()[:8]
 
 
 def pay_link(kind, src):
@@ -66,7 +67,7 @@ def page(path, title, desc, body, *, uk_twin=None, schema=(), crumbs=None, noind
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/img/hdd-02-results-screen.jpg">
 <link rel="icon" type="image/png" href="/img/favicon-icon.png">
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/site.css?v={CSS_V}">
 {chr(10).join(blocks)}
 </head>
 <body>
