@@ -1,0 +1,25 @@
+# Data Clinic Recovery Software
+
+> Data recovery software for Windows from Data Clinic Ltd, a UK data recovery company working since 2002. Software only on this site; the UK lab is at https://www.dataclinic.co.uk/.
+
+## Products
+- [Data Clinic Recovery for Hard Drives](https://www.dataclinic.com/hard-drive-recovery-software/): Windows 10/11 (64-bit). Hard drives, SSDs and USB sticks; reads NTFS, exFAT, FAT32 and Mac APFS, HFS+, HFS. Quick scan, deep scan, imaging, SMART health check before scanning, strictly read-only, Ask Rex AI assistant (optional, off by default). Free scan and preview; licences £39.99 (28 days), £69.99 (1 year), £149 (Business, 1 year). Current version 1.1.1.
+- [Data Clinic Recovery for Memory Cards](https://www.dataclinic.com/memory-card-recovery-software/): free; SD and microSD cards (FAT32/exFAT); deep scan recognises 17 formats. Version 1.1.0.
+
+## Honest limits
+- Overwritten data cannot be recovered by any software.
+- SSDs usually erase deleted files within minutes (TRIM); a quick format on an SSD erases the whole drive.
+- Cannot read BitLocker, ReFS, Linux or FAT16 file systems, dynamic disks or RAID needing rebuild; never scans the drive Windows runs from.
+- Physically failing drives (clicking, not detected, 0 MB) need a data recovery lab, not software.
+
+## Guides
+- [Recover files deleted from the Recycle Bin or with Shift+Delete](https://www.dataclinic.com/guides/recover-deleted-files-recycle-bin/)
+- [Recover files from a formatted hard drive](https://www.dataclinic.com/guides/recover-formatted-hard-drive/)
+- [Drive showing as RAW? Get your files back without formatting](https://www.dataclinic.com/guides/drive-shows-raw/)
+- [“You need to format the disk in drive E: before you can use it”](https://www.dataclinic.com/guides/you-need-to-format-the-disk/)
+- [Recover deleted files from an external hard drive](https://www.dataclinic.com/guides/recover-deleted-files-external-hard-drive/)
+- [Read a Mac drive on Windows and copy your files off](https://www.dataclinic.com/guides/read-mac-drive-on-windows/)
+- [Formatted a USB stick by mistake? How to get the files back](https://www.dataclinic.com/guides/recover-formatted-usb-stick/)
+- [Can deleted files be recovered from an SSD?](https://www.dataclinic.com/guides/ssd-deleted-files-trim/)
+- [Recover deleted or formatted photos from an SD card](https://www.dataclinic.com/guides/recover-deleted-photos-sd-card/)
+- [Is my hard drive failing? The signs, and when to stop](https://www.dataclinic.com/guides/is-my-hard-drive-failing/)

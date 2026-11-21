@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /licence/
+
+Sitemap: https://www.dataclinic.com/sitemap.xml

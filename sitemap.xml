@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://www.dataclinic.com/</loc></url>
-<url><loc>https://www.dataclinic.com/products.html</loc></url>
-<url><loc>https://www.dataclinic.com/hard-drive-recovery-software.html</loc></url>
-<url><loc>https://www.dataclinic.com/memory-card-recovery.html</loc></url>
-<url><loc>https://www.dataclinic.com/contact.html</loc></url>
-<url><loc>https://www.dataclinic.com/refund-policy.html</loc></url>
-<url><loc>https://www.dataclinic.com/licence-agreement.html</loc></url>
-<url><loc>https://www.dataclinic.com/privacy.html</loc></url>
+<url><loc>https://www.dataclinic.com/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/hard-drive-recovery-software/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/memory-card-recovery-software/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/pricing/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/which-software/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/download/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/support/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/about/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/legal/refund-policy/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/legal/licence-agreement/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/legal/privacy/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/recover-deleted-files-recycle-bin/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/recover-formatted-hard-drive/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/drive-shows-raw/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/you-need-to-format-the-disk/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/recover-deleted-files-external-hard-drive/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/read-mac-drive-on-windows/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/recover-formatted-usb-stick/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/ssd-deleted-files-trim/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/recover-deleted-photos-sd-card/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/is-my-hard-drive-failing/</loc><lastmod>2026-11-21</lastmod></url>
+<url><loc>https://www.dataclinic.com/guides/</loc><lastmod>2026-11-21</lastmod></url>
 </urlset>
