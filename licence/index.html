@@ -53,8 +53,8 @@ var t0=Date.now(),fails=0;
 function ready(j){show('ty-ready');$('ty-key').textContent=j.key;var t=j.type||'',y=!!j.renews||/1y|year/i.test(t);$('ty-type').textContent=TYPES[t]||'';
  if(y){$('ty-valid').textContent=j.renews?('Renews automatically on '+fmt(j.renews)):'Renews automatically each year.'}else if(j.expires){$('ty-valid').textContent='Valid until '+fmt(j.expires)+' (does not renew)'}}
 function tick(){if(done)return;if(Date.now()-t0>120000){show('ty-late');return}
- fetch(API+'?session='+encodeURIComponent(sid),{cache:'no-store',credentials:'omit'}).then(function(r){return r.json()}).then(function(j){
-  if(j&&j.status==='ready'&&j.key){ready(j);return}if(j&&j.status==='expired'){show('ty-mail');return}setTimeout(tick,3500)})
+ fetch(API+'?session='+encodeURIComponent(sid),{cache:'no-store',credentials:'omit'}).then(function(r){if(r.status===429||r.status===400){show('ty-late');return null}return r.json()}).then(function(j){
+  if(done)return;if(j&&j.status==='ready'&&j.key){ready(j);return}if(j&&j.status==='expired'){show('ty-mail');return}setTimeout(tick,3500)})
  ['catch'](function(){if(++fails>=3){show('ty-late');return}setTimeout(tick,3500)})}
 tick();
 $('ty-copy').addEventListener('click',function(){var b=this;try{navigator.clipboard.writeText($('ty-key').textContent).then(function(){b.textContent='Copied'})}catch(e){}});

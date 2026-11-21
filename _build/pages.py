@@ -400,6 +400,7 @@ DOWNLOAD = page("/download/", "Download Data Clinic Recovery Software for Window
 <p>SD and microSD cards. Completely free.</p>
 <p class="meta">Version {CARD['version']} · {CARD['released']} · {CARD['size']}</p>
 {dl_card("Download " + CARD['version'])}
+<p class="meta">SHA-256: <code>{CARD['sha256']}</code></p>
 <p class="small"><a href="/memory-card-recovery-software/">Product details</a></p></div>
 </div>
 </div></section>
@@ -411,7 +412,7 @@ DOWNLOAD = page("/download/", "Download Data Clinic Recovery Software for Window
 <li><b>If Microsoft SmartScreen appears</b> ("Windows protected your PC"), click <b>More info</b>, check the publisher says Data Clinic Ltd, then <b>Run anyway</b>. SmartScreen is cautious about newly released software whoever published it; every new version is submitted to Microsoft.</li>
 <li><b>Updating.</b> When Recovery for Hard Drives starts online, it tells you if a newer version is available. Install the new version over the old one; your licence key carries over.</li>
 </ol>
-<p class="small muted">To check a download, run <code>certutil -hashfile &lt;file&gt; SHA256</code> in Command Prompt and compare the result with the checksum above.</p>
+<p class="small muted">To check a download, run <code>certutil -hashfile &lt;file&gt; SHA256</code> in Command Prompt and compare the result with the checksums above.</p>
 </div></section>
 """, crumbs=[("/", "Home"), ("/download/", "Downloads")])
 
@@ -487,8 +488,8 @@ var t0=Date.now(),fails=0;
 function ready(j){{show('ty-ready');$('ty-key').textContent=j.key;var t=j.type||'',y=!!j.renews||/1y|year/i.test(t);$('ty-type').textContent=TYPES[t]||'';
  if(y){{$('ty-valid').textContent=j.renews?('Renews automatically on '+fmt(j.renews)):'Renews automatically each year.'}}else if(j.expires){{$('ty-valid').textContent='Valid until '+fmt(j.expires)+' (does not renew)'}}}}
 function tick(){{if(done)return;if(Date.now()-t0>120000){{show('ty-late');return}}
- fetch(API+'?session='+encodeURIComponent(sid),{{cache:'no-store',credentials:'omit'}}).then(function(r){{return r.json()}}).then(function(j){{
-  if(j&&j.status==='ready'&&j.key){{ready(j);return}}if(j&&j.status==='expired'){{show('ty-mail');return}}setTimeout(tick,3500)}})
+ fetch(API+'?session='+encodeURIComponent(sid),{{cache:'no-store',credentials:'omit'}}).then(function(r){{if(r.status===429||r.status===400){{show('ty-late');return null}}return r.json()}}).then(function(j){{
+  if(done)return;if(j&&j.status==='ready'&&j.key){{ready(j);return}}if(j&&j.status==='expired'){{show('ty-mail');return}}setTimeout(tick,3500)}})
  ['catch'](function(){{if(++fails>=3){{show('ty-late');return}}setTimeout(tick,3500)}})}}
 tick();
 $('ty-copy').addEventListener('click',function(){{var b=this;try{{navigator.clipboard.writeText($('ty-key').textContent).then(function(){{b.textContent='Copied'}})}}catch(e){{}}}});

@@ -24,6 +24,7 @@ CARD = {
     "version": "1.1.0",
     "released": "28-10-2026",
     "installer": CO_UK + "/drive-rescue/DataClinic-MemoryCardRecovery-Setup-1.1.0.exe",
+    "sha256": "60216bacd1d1fb396fe56de66a5ce56e760a32f223a3c23ff35142fc694a48f3",
     "size": "59 MB",
     "cot_uk": CO_UK + "/data-recovery-software-free-download-from-data-clinic-ltd/",
 }
