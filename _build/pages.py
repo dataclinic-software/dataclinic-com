@@ -60,7 +60,7 @@ HOME = page("/", "Data Recovery Software for Windows — See Your Files Before Y
 <a class="prod" href="/hard-drive-recovery-software/"><img src="/img/hdd-01-drive-picker.jpg" alt="" width="925" height="511" loading="lazy">
 <div><h3>Recovery for Hard Drives</h3><p>Hard drives, SSDs and USB memory sticks — deleted files, formatted drives, RAW drives and Mac drives on Windows. Ask Rex AI built in.</p>
 <span class="pill">Free scan · licences from £39.99</span></div></a>
-<a class="prod" href="/memory-card-recovery-software/"><img src="/img/mc-device-picker.jpg" alt="" width="925" height="511" loading="lazy">
+<a class="prod" href="/memory-card-recovery-software/"><img src="/img/mc-device-picker.jpg" alt="" width="980" height="380" loading="lazy" style="object-fit:contain;background:#f5f7fa">
 <div><h3>Recovery for Memory Cards</h3><p>SD and microSD cards from cameras, drones and phones — deleted and formatted photos and videos.</p>
 <span class="pill free">Completely free</span></div></a>
 </div>
@@ -257,7 +257,7 @@ CARD_PAGE = page("/memory-card-recovery-software/", "Free Memory Card & SD Card 
 <p class="fine">Windows 10/11, 64-bit · version {CARD['version']} · signed by Data Clinic Ltd</p>
 {NOT_WINDOWS}
 </div>
-<div class="shot"><img src="/img/mc-device-picker.jpg" alt="The memory card tool only lists removable cards" width="925" height="511" fetchpriority="high"></div>
+<div class="shot"><img src="/img/mc-device-picker.jpg" alt="Choose the memory card to scan: the tool lists only removable cards and never changes them" width="980" height="380" fetchpriority="high"></div>
 </div></section>
 <div class="trust"><div class="wrap"><span>100% free</span><span>No registration</span><span>Strictly read-only</span><span>Every photo checked for damage</span></div></div>
 
