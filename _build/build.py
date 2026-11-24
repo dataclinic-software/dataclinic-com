@@ -51,7 +51,9 @@ for g in GUIDES:
     article = {"@context": "https://schema.org", "@type": "Article", "headline": g["title"], "description": g["desc"],
                "author": {"@type": "Organization", "name": "Data Clinic Ltd"},
                "publisher": {"@type": "Organization", "name": "Data Clinic Ltd", "logo": {"@type": "ImageObject", "url": SITE + "/img/logo.png"}},
-               "datePublished": TODAY, "dateModified": TODAY, "mainEntityOfPage": SITE + path}
+               # Fixed dates per guide (set "published"/"modified" in guides.py); never the build date.
+               "datePublished": g.get("published", "2026-11-21"),
+               "dateModified": g.get("modified", g.get("published", "2026-11-21")), "mainEntityOfPage": SITE + path}
     body = f"""<article>
 <section class="pagehead guidehead"><div class="wrap"><p class="eyebrow blue">Guide</p><h1>{g['h1']}</h1></div></section>
 <section class="tight"><div class="wrap guidegrid">
