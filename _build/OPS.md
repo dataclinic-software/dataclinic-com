@@ -6,6 +6,7 @@ For Claude sessions and scheduled tasks. Read before changing the site. Owner: C
 - Sell Data Clinic's recovery software worldwide; become and stay the market leader.
 - Claude has **standing permission to publish to dataclinic.com** (push to `main`) without asking each time, within the rules below.
 - **Ask Chris first** for: prices, legal terms (licence, refund, privacy terms), anything mentioning the UK lab, anything that costs money (ads, paid listings, tools), new products or claims about unreleased features.
+- **Exception (Chris, 24-11-2026):** wording Chris has already approved for the .co.uk (e.g. release-day privacy or FAQ text in a release note / Main-project reply marked approved) may be copied onto the matching .com page, including legal pages, without asking. New or changed terms still need Chris.
 
 ## Rules the site always follows
 1. Software only. No lab service pages or lab sales copy. Never compete with dataclinic.co.uk for UK lab work.
