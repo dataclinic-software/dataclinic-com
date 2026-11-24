@@ -8,14 +8,15 @@ LAUNCHED = True
 
 HDD = {
     "name": "Data Clinic Recovery for Hard Drives",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "released": "November 2026",
-    "installer": CO_UK + "/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.1.exe",
-    "sha256": "a6d1e790a1e1bc1b10a8651ae0e3648492c7090d4cbba495748b2b7f02f5606d",
+    "installer": CO_UK + "/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe",
+    "sha256": "b3e83a2691797e29deb8083429875543e5e0eb0378df692c63b698d6e1d32a04",
     "size": "59.7 MB",
-    "whatsnew": "Ask Rex now walks you through every step to your saved files, highlighting the button to press, "
-                "and shows you the files he'd pick before you agree. He can also suggest a deep scan when a quick scan "
-                "doesn't find what you need. Install it over 1.1.0; your licence key carries over.",
+    "whatsnew": "Fixes a false “signs of physical failure” warning that some healthy drives in USB cases could get "
+                "after a quick scan. The scan screen now shows steady progress from start to finish, and the program can "
+                "send anonymous usage counts, which you can turn off in Settings. Install it over 1.1.1; your licence key "
+                "carries over.",
     "cot_uk": CO_UK + "/data-recovery-software-for-hard-drives/",
 }
 

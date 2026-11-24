@@ -3,7 +3,7 @@
 > Data recovery software for Windows from Data Clinic Ltd, a UK data recovery company working since 2002. Software only on this site; the UK lab is at https://www.dataclinic.co.uk/.
 
 ## Products
-- [Data Clinic Recovery for Hard Drives](https://www.dataclinic.com/hard-drive-recovery-software/): Windows 10/11 (64-bit). Hard drives, SSDs and USB sticks; reads NTFS, exFAT, FAT32 and Mac APFS, HFS+, HFS. Quick scan, deep scan, imaging, SMART health check before scanning, strictly read-only, Ask Rex AI assistant (optional, off by default). Free scan and preview; licences £39.99 (28 days), £69.99 (1 year), £149 (Business, 1 year). Current version 1.1.1.
+- [Data Clinic Recovery for Hard Drives](https://www.dataclinic.com/hard-drive-recovery-software/): Windows 10/11 (64-bit). Hard drives, SSDs and USB sticks; reads NTFS, exFAT, FAT32 and Mac APFS, HFS+, HFS. Quick scan, deep scan, imaging, SMART health check before scanning, strictly read-only, Ask Rex AI assistant (optional, off by default). Free scan and preview; licences £39.99 (28 days), £69.99 (1 year), £149 (Business, 1 year). Current version 1.1.2.
 - [Data Clinic Recovery for Memory Cards](https://www.dataclinic.com/memory-card-recovery-software/): free; SD and microSD cards (FAT32/exFAT); deep scan recognises 17 formats. Version 1.1.0.
 
 ## Honest limits
