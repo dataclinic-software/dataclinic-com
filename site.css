@@ -210,3 +210,5 @@ section.tight{padding:48px 0}
 .ckbar p{margin:0}.ckbar a{color:#9fd0ff}
 .ckbtns{display:flex;gap:8px}
 .ckbar .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.hcv{display:flex;flex-direction:column;gap:12px;justify-content:center}.hcv div{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;font-weight:700}.hcv span{flex:0 0 14px;width:14px;height:14px;border-radius:50%}
+.prod.wide{grid-column:1/-1}

@@ -55,13 +55,15 @@ HOME = page("/", "Data Recovery Software for Windows — See Your Files Before Y
 <div class="trust"><div class="wrap"><span>Free scan and preview</span><span>Strictly read-only</span><span>Checks drive health first</span><span>13 languages</span><span>Since 2002</span></div></div>
 
 <section><div class="wrap">
-<div class="center"><p class="eyebrow blue">Our software</p><h2>Two tools, each built for its job</h2></div>
+<div class="center"><p class="eyebrow blue">Our software</p><h2>Our tools, each built for its job</h2></div>
 <div class="prods">
 <a class="prod" href="/hard-drive-recovery-software/"><img src="/img/hdd-01-drive-picker.jpg" alt="" width="925" height="511" loading="lazy">
 <div><h3>Recovery for Hard Drives</h3><p>Hard drives, SSDs and USB memory sticks — deleted files, formatted drives, RAW drives and Mac drives on Windows. Ask Rex AI built in.</p>
 <span class="pill">Free scan · licences from £39.99</span></div></a>
 <a class="prod" href="/memory-card-recovery-software/"><img src="/img/mc-device-picker.jpg" alt="" width="980" height="380" loading="lazy" style="object-fit:contain;background:#f5f7fa">
 <div><h3>Recovery for Memory Cards</h3><p>SD and microSD cards from cameras, drones and phones — deleted and formatted photos and videos.</p>
+<span class="pill free">Completely free</span></div></a>
+<a class="prod wide" href="/drive-health-check/"><div><h3>Drive Health Check <span class="pill">New · beta</span></h3><p>Is a drive about to fail? Checks every hard drive, SSD and USB drive in your PC and gives a plain verdict. Never writes to a drive.</p>
 <span class="pill free">Completely free</span></div></a>
 </div>
 <p class="center muted small">Not sure? <a href="/which-software/">Answer two questions</a> and we'll point you to the right one.</p>
@@ -387,7 +389,7 @@ DOWNLOAD = page("/download/", "Download Data Clinic Recovery Software for Window
                 "Download Data Clinic Recovery for Hard Drives and the free Recovery for Memory Cards. Signed installers for Windows 10 and 11, checksums and installation help.",
                 f"""
 <section class="pagehead"><div class="wrap center"><h1>Downloads</h1>
-<p class="intro">Both installers are digitally signed by Data Clinic Ltd. Windows 10 or 11, 64-bit.</p>{NOT_WINDOWS}</div></section>
+<p class="intro">All three installers are digitally signed by Data Clinic Ltd. Windows 10 or 11, 64-bit.</p>{NOT_WINDOWS}</div></section>
 <section class="tight"><div class="wrap">
 <div class="dlrow">
 <div class="dlbox"><h2>Recovery for Hard Drives</h2>
@@ -402,6 +404,12 @@ DOWNLOAD = page("/download/", "Download Data Clinic Recovery Software for Window
 {dl_card("Download " + CARD['version'])}
 <p class="meta">SHA-256: <code>{CARD['sha256']}</code></p>
 <p class="small"><a href="/memory-card-recovery-software/">Product details</a></p></div>
+<div class="dlbox"><h2>Drive Health Check</h2>
+<p>Checks every drive's health in plain words. Completely free. Never writes to a drive.</p>
+<p class="meta">Version {HEALTH['version']} (beta) · {HEALTH['released']} · {HEALTH['size']} · asks for administrator permission</p>
+{dl_health("Download " + HEALTH['version'])}
+<p class="meta">SHA-256: <code>{HEALTH['sha256']}</code></p>
+<p class="small"><a href="/drive-health-check/">Product details</a></p></div>
 </div>
 </div></section>
 <section class="alt tight"><div class="wrap narrow">
@@ -530,3 +538,82 @@ NOTFOUND = page("/404.html", "Page not found — Data Clinic Recovery Software",
 <p class="intro">That page doesn't exist — but your files might still. Try one of these:</p>
 <p><a class="btn" href="/">Home</a> <a class="btn line" href="/guides/">Guides</a> <a class="btn line" href="/download/">Downloads</a></p></div></section>""",
                 noindex=True)
+
+# ---------------------------------------------------------------- DRIVE HEALTH CHECK (1.0.0 beta, 25-11-2026)
+# Facts only from the Software project's 1.0.0 release note. No lab mention on the .com (Chris, 25-11-2026).
+HEALTH_APP = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": HEALTH["name"],
+              "operatingSystem": "Windows 10, Windows 11 (64-bit)", "applicationCategory": "UtilitiesApplication",
+              "softwareVersion": HEALTH["version"], "downloadUrl": HEALTH["installer"], "fileSize": HEALTH["size"],
+              "url": SITE + "/drive-health-check/", "isAccessibleForFree": True,
+              "publisher": {"@type": "Organization", "name": "Data Clinic Ltd"},
+              "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"},
+              "featureList": ["Checks hard drives, SATA and NVMe SSDs, USB drives and the system drive",
+                              "Four plain-English verdicts with reasons", "Optional read-only surface test",
+                              "Save the report as a PDF", "Never writes to, repairs or formats any drive", "13 languages"]}
+HEALTH_FAQ = [
+    ("Is the Drive Health Check really free?", "Yes. It's free to download and use, with no licence key and no time limit."),
+    ("Can it damage my drive or change anything on it?", "No. It never writes to, repairs or formats any drive. It reads each drive's own health report, and the optional surface test only reads. The surface test stops by itself if the drive starts struggling, and it is never offered on a drive that is already failing."),
+    ("Which drives can it check?", "Every drive in or attached to the PC: hard drives, SSDs (SATA and NVMe), USB drives, and the PC's own system drive."),
+    ("What do the four verdicts mean?", "<b>Healthy</b>: the drive's report shows nothing wrong. <b>Back it up now</b>: the report shows warning signs, so copy anything important while you still can. <b>Stop using it</b>: the report shows the drive is failing, and every further use can make things worse. <b>Can't read the health report</b>: the drive didn't pass its report through to Windows. Each verdict lists its reasons in plain words, and the full report is there for experts."),
+    ("Why does it say it can't read the health report?", "This is common with drives in USB cases and with memory sticks, which often don't pass the drive's health report through to Windows. It doesn't mean the drive is failing; it means the tool can't see its report."),
+    ("Why does it ask for administrator permission?", "Windows only lets a program read a drive's health report if it has administrator permission, so the tool asks for it when it starts."),
+    ("My drive says “Stop using it”. What should I do?", "Stop using the drive, and don't run recovery software on it — every further read of a failing drive can make things worse. If the files on it matter, take it to a professional data recovery lab."),
+    ("Can it get my files back?", "No. It only checks drive health. If the drive is healthy and you've lost files, <a href=\"/hard-drive-recovery-software/\">Recovery for Hard Drives</a> can scan for them, with a free scan and preview."),
+    ("What does it send over the internet?", "Nothing about your drives or files. It checks for a newer version. It can also send anonymous usage counts, but that is off unless you tick “Send anonymous usage counts to Data Clinic”. The counts say which verdicts were shown, the type of drive and how many drives, whether a surface test was started and how it ended, and which next-step button was pressed. They never include drive models, serial numbers, sizes, file names or anything you type. See the <a href=\"/legal/privacy/\">privacy policy</a>."),
+    ("Is there a Mac version?", "Not yet. This first release is for Windows 10 and 11 (64-bit). A Mac version is planned after the Windows beta."),
+    ("Windows says “Windows protected your PC”. Is it safe?", "The installer is signed by Data Clinic Ltd. Because it's a brand-new file, Windows may show this warning until enough people have downloaded it. Click <b>More info</b>, check the publisher says Data Clinic Ltd, then <b>Run anyway</b>."),
+]
+HEALTH_PAGE = page("/drive-health-check/", "Free Drive Health Check for Windows — Is Your Drive Failing? | Data Clinic",
+                   "Free Windows tool that checks every hard drive, SSD and USB drive in your PC and tells you in plain words if it's healthy or failing. Never writes to a drive.",
+                   f"""
+<section class="hero"><div class="wrap grid">
+<div>
+<p class="eyebrow">Free Windows tool · hard drives, SSDs and USB drives</p>
+<h1>Is your drive about to fail? <em>Find out in plain words — free.</em></h1>
+<p class="lead">The Data Clinic Drive Health Check reads each drive's own health report and tells you whether it's healthy, needs backing up now, or should not be used at all. It never writes to, repairs or formats any drive.</p>
+<div class="ctas">{dl_health(f"Free download — {HEALTH['size']}")}<a class="btn ghost" href="#verdicts">What it tells you</a></div>
+<p class="fine">Windows 10/11, 64-bit · asks for administrator permission · version {HEALTH['version']} (beta) · signed by Data Clinic Ltd</p>
+{NOT_WINDOWS}
+</div>
+<div class="hcv" aria-hidden="true">
+<div><span style="background:#2fb36b"></span>Healthy</div>
+<div><span style="background:#f0a500"></span>Back it up now</div>
+<div><span style="background:#c8102e"></span>Stop using it</div>
+<div><span style="background:#9aa3af"></span>Can't read the health report</div>
+</div>
+</div></section>
+<div class="trust"><div class="wrap"><span>Free, no licence key</span><span>Never writes to a drive</span><span>HDD, SSD, NVMe and USB</span><span>PDF report</span><span>13 languages</span></div></div>
+
+<section id="verdicts"><div class="wrap">
+<div class="center"><h2>One plain verdict for every drive</h2>
+<p class="intro">It checks every drive in or attached to the PC — hard drives, SSDs (SATA and NVMe), USB drives and the PC's own system drive — by reading the health report each drive keeps about itself (SMART, or the NVMe health log). Each verdict comes with its reasons in plain words, and the full report for experts.</p></div>
+<div class="cards">
+<div class="card"><h3>🟢 Healthy</h3><p>The drive's report shows nothing wrong.</p></div>
+<div class="card"><h3>🟠 Back it up now</h3><p>Warning signs in the report. Copy anything important while you still can.</p></div>
+<div class="card"><h3>🔴 Stop using it</h3><p>The report shows the drive is failing. Every further use can make it worse — take it to a professional data recovery lab if the files matter.</p></div>
+<div class="card"><h3>⚪ Can't read the health report</h3><p>Common with USB cases and memory sticks, which often don't pass the report through to Windows.</p></div>
+</div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<div class="center"><h2>What else it does</h2></div>
+<div class="cards">
+<div class="card"><h3>Optional read-only surface test</h3><p>Reads every part of the drive once. It stops by itself if the drive starts struggling, and it's never offered on a drive that is already failing.</p></div>
+<div class="card"><h3>Save the report as a PDF</h3><p>Keep a record, or send it to a technician.</p></div>
+<div class="card"><h3>Lost files on a healthy drive?</h3><p>It points you to <a href="/hard-drive-recovery-software/">Recovery for Hard Drives</a>, which can scan for them with a free preview.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap narrow">
+<h2>What you need</h2>
+<ul>
+<li>Windows 10 or 11, 64-bit. Nothing else to install — the download includes everything.</li>
+<li>Administrator permission: Windows asks when the program starts, because only programs with that permission can read a drive's health report.</li>
+<li>No Mac version yet. It's planned after the Windows beta.</li>
+</ul>
+<p class="muted small">What's new in {HEALTH['version']} (beta, {HEALTH['released']}): first release. Checks the health of every drive in your PC in plain words, offers an optional read-only surface test, and saves a PDF report. It never writes to any drive.</p>
+</div></section>
+{faq_block(HEALTH_FAQ)}
+{band("Check your drives — free", "Windows 10 and 11, 64-bit. It never writes to any drive.", dl_health("Free download"))}
+""", uk_twin=HEALTH["cot_uk"], schema=[HEALTH_APP, faq_schema(HEALTH_FAQ)],
+                   crumbs=[("/", "Home"), ("/drive-health-check/", "Drive Health Check")])

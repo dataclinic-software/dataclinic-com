@@ -92,7 +92,7 @@ FOOTER = f"""<footer class="ftr"><div class="wrap">
 <div class="cols">
 <div><img src="/img/logo.png" alt="Data Clinic" width="140" height="24" style="margin-bottom:12px">
 <p>Data recovery software from Data Clinic Ltd, a data recovery company working since 2002.</p></div>
-<div><h4>Software</h4><a href="/hard-drive-recovery-software/">Recovery for Hard Drives</a><a href="/memory-card-recovery-software/">Recovery for Memory Cards (free)</a><a href="/which-software/">Which one do I need?</a><a href="/pricing/">Pricing</a><a href="/download/">Downloads</a></div>
+<div><h4>Software</h4><a href="/hard-drive-recovery-software/">Recovery for Hard Drives</a><a href="/memory-card-recovery-software/">Recovery for Memory Cards (free)</a><a href="/drive-health-check/">Drive Health Check (free)</a><a href="/which-software/">Which one do I need?</a><a href="/pricing/">Pricing</a><a href="/download/">Downloads</a></div>
 <div><h4>Help</h4><a href="/guides/">Guides</a><a href="/support/">Support</a><a href="/about/">About Data Clinic</a><a href="{CO_UK}/">UK data recovery lab</a></div>
 <div><h4>Legal</h4><a href="/legal/refund-policy/">Refund policy</a><a href="/legal/licence-agreement/">Licence agreement</a><a href="/legal/privacy/">Privacy</a><a href="#" onclick="return dcCookieSettings()">Cookie settings</a></div>
 </div>
@@ -126,6 +126,10 @@ CUR_NOTE = ('<div class="curnote"><span aria-hidden="true">💱</span><div>Price
 
 def dl_hdd(label="Download free for Windows", cls="btn"):
     return f'<a class="{cls}" href="{HDD["installer"]}">{label}</a>'
+
+
+def dl_health(label="Download free for Windows", cls="btn"):
+    return f'<a class="{cls}" href="{HEALTH["installer"]}">{label}</a>'
 
 
 def dl_card(label="Download free for Windows", cls="btn"):

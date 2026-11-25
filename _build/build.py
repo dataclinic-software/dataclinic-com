@@ -24,6 +24,7 @@ def w(path, content, index=True):
 w("/", pages.HOME)
 w("/hard-drive-recovery-software/", pages.HDD_PAGE)
 w("/memory-card-recovery-software/", pages.CARD_PAGE)
+w("/drive-health-check/", pages.HEALTH_PAGE)
 w("/pricing/", pages.PRICING)
 w("/which-software/", pages.CHOOSER)
 w("/download/", pages.DOWNLOAD)

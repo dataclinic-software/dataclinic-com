@@ -309,6 +309,7 @@ dict(slug="is-my-hard-drive-failing", product="hdd",
 <li>SMART shows a caution, such as reallocated or pending sectors.</li>
 </ul>
 <p>Back up anything important <b>once</b>, then replace the drive. If the data isn't backed up anywhere else, read the drive as few times as possible.</p>
+<p>To read a drive's SMART report in plain words, use our free <a href="/drive-health-check/">Drive Health Check</a>: it checks every drive in the PC, gives each one a verdict (Healthy, Back it up now, Stop using it, or Can't read the health report) and never writes to any drive.</p>
 
 <h2>How Recovery for Hard Drives handles this</h2>
 <ul>

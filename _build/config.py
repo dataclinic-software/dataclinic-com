@@ -30,6 +30,16 @@ CARD = {
     "cot_uk": CO_UK + "/data-recovery-software-free-download-from-data-clinic-ltd/",
 }
 
+HEALTH = {
+    "name": "Data Clinic Drive Health Check",
+    "version": "1.0.0",
+    "released": "November 2026",
+    "installer": CO_UK + "/drive-rescue/DataClinic-DriveHealthCheck-Setup-1.0.0.exe",
+    "sha256": "5e4525dee4b2ae65dba4c17c3b4406b0679feaff558cf8d14a948751b8245308",
+    "size": "59.4 MB",
+    "cot_uk": CO_UK + "/free-drive-health-check/",
+}
+
 PAY = {
     "personal_28d": "https://buy.stripe.com/bJe5kCboi4ebdoObaEao800",
     "personal_1y": "https://buy.stripe.com/dRm6oG4ZU9yvgB0fqUao801",
