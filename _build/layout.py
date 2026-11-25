@@ -21,9 +21,9 @@ ORG = {"@context": "https://schema.org", "@type": "Organization", "name": "Data 
                    "addressLocality": "Bury", "postalCode": "BL9 7NX", "addressCountry": "GB"},
        "email": SUPPORT_EMAIL, "foundingDate": "2002"}
 
-NAV = [("/", "Home"), ("/hard-drive-recovery-software/", "Hard drive software"),
-       ("/memory-card-recovery-software/", "Memory card software"),
-       ("/drive-health-check/", "Drive Health Check"), ("/pricing/", "Pricing"),
+NAV = [("/", "Home"), ("/drive-health-check/", "Drive Health Check"),
+       ("/hard-drive-recovery-software/", "Hard Drive Software"),
+       ("/memory-card-recovery-software/", "Memory Card Software"), ("/pricing/", "Pricing"),
        ("/guides/", "Guides"), ("/support/", "Support")]
 
 
