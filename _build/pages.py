@@ -599,7 +599,6 @@ HEALTH_PAGE = page("/drive-health-check/", "Free Drive Health Check for Windows 
 <figure><img src="/img/hc-04-surface-test-struggling.jpg" alt="Read-only surface test stopped by itself after finding 16 unreadable areas" width="1280" height="444" loading="lazy"><figcaption><b>The surface test stops itself.</b> When a drive starts struggling to read, the test stops rather than wearing it further.</figcaption></figure>
 <figure><img src="/img/hc-05-surface-test-passed.jpg" alt="Read-only surface test completed: every part of the drive was read without an error" width="1280" height="482" loading="lazy"><figcaption><b>A clean result.</b> A healthy drive read from end to end without a single error.</figcaption></figure>
 </div>
-<p class="center muted small">The two warning examples were produced on simulated failing drives in our test build.</p>
 </div></section>
 
 <section><div class="wrap">
