@@ -39,9 +39,14 @@ For Claude sessions and scheduled tasks. Read before changing the site. Owner: C
 ## UK twins (hreflang on both sites)
 - .com side: `uk_twin=` argument on `page()` in `pages.py`/`guides.py`.
 - .co.uk side: WPCode PHP snippet **18648** "dc-hreflang-com-twins" (frontend only) holds the path → .com URL map. **Add a line there whenever a new .com page gets a .co.uk twin**, then check both pages show matching hreflang.
+- How: WPCode snippets have no REST route. Open https://www.dataclinic.co.uk/wp-admin/admin.php?page=wpcode-snippet-manager&snippet_id=18648 in Claude in Chrome (signed in as Data Clinic Staff), insert the line with the page's CodeMirror (`document.querySelector('.CodeMirror').CodeMirror.replaceRange(...)` inside `$twins = array(`), click Update, then curl both pages for hreflang. If Chrome isn't available or wp-admin is signed out, put the line in NEEDS.
 
 ## Licence key endpoint
 - https://www.dataclinic.co.uk/software-licence/key/?session=… (owned by the Software project). Sends `Access-Control-Allow-Origin: https://www.dataclinic.com` on all replies. Rate limit 60/IP/hour. Yearly licences: show `renews`, never `expires`.
 
 ## Release sync (each software release note)
 Update `config.py` (version, installer URL, size, SHA-256, what's new) and screenshots, on the same day as the .co.uk.
+
+## Scheduled runs: problems go to the daily brief (Chris, 26-11-2026)
+- Chris doesn't always see push notifications from scheduled tasks. Fix a problem in the run if it's within the rules; otherwise write it in NEEDS on the run's `dc-activity-log.md` line, which the daily brief reads. A push notification is an extra, never the only report.
+- Mac folder: if `$HOME/mnt/Data Clinic - Online Diagnosis Tool` isn't connected, call device_request_folder_access once for `~/Documents/Claude/Projects/Data Clinic - Online Diagnosis Tool`. If it's still unreachable, put the activity line at the end of `_build/CONTENT-LOG.md` marked `PENDING-ACTIVITY`; the next run that reaches the Mac copies every PENDING-ACTIVITY line into dc-activity-log.md and marks it `copied`.
