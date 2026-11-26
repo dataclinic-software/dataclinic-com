@@ -68,11 +68,11 @@
 <li>BitLocker-encrypted drives can look RAW too; Recovery for Hard Drives can't read BitLocker.</li></ul>
 
 </div>
-<aside class="side"><div class="sidebox"><h3>Recovery for Hard Drives</h3><p>Free scan and preview. Strictly read-only. Checks drive health first.</p><a class="btn sm" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download free</a><p class="small"><a href="/hard-drive-recovery-software/">How it works →</a></p></div></aside>
+<aside class="side"><div class="sidebox"><h3>Recovery for Hard Drives</h3><p>Free scan and preview. Strictly read-only. Checks drive health first.</p><a class="btn sm" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download free</a><p class="small"><a href="/hard-drive-recovery-software/">How it works →</a></p></div></aside>
 </div></section>
 </article>
 <section id="faq" class="faq"><div class="wrap narrow"><h2>Questions</h2><details><summary>Can I fix a RAW drive without losing data?</summary><p>Copy the files off first, with recovery software, then format the drive. Trying to “fix” it in place risks the files.</p></details><details><summary>Will CHKDSK fix a RAW drive?</summary><p>Usually it reports that it can't run on RAW drives. When it does run on a damaged drive, it can delete what it can't make sense of — so don't use it before your files are safe.</p></details><details><summary>My external drive shows RAW on Windows but works on a Mac.</summary><p>Then it's Mac-formatted. Windows can't read APFS or HFS+, but Recovery for Hard Drives can, and can copy the files onto a Windows drive.</p></details></div></section>
-<section class="band"><div class="wrap"><h2>See what's recoverable — free</h2><p>Scan and preview for free on Windows 10 or 11. Pay only to save files.</p><a class="btn" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download Recovery for Hard Drives</a></div></section>
+<section class="band"><div class="wrap"><h2>See what's recoverable — free</h2><p>Scan and preview for free on Windows 10 or 11. Pay only to save files.</p><a class="btn" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download Recovery for Hard Drives</a></div></section>
 </main>
 <footer class="ftr"><div class="wrap">
 <div class="cols">
@@ -101,7 +101,7 @@ function dcCookieSettings(){document.getElementById('ckbar').hidden=false;return
 function dcEv(n,p){if(window.dcGaOn)gtag('event',n,p||{})}
 (function(){var v=null;try{v=localStorage.getItem('dcCk')}catch(e){}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
-if(/\.exe($|\?)/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname});
+if(/\.exe($|[?&])/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':/HealthCheck/i.test(h)?'health':'card',page:location.pathname});
 else if(/buy\.stripe\.com/.test(h))dcEv('dc_com_buy_click',{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname})});
 </script>
 </body></html>

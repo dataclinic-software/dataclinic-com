@@ -116,7 +116,7 @@ function dcCookieSettings(){{document.getElementById('ckbar').hidden=false;retur
 function dcEv(n,p){{if(window.dcGaOn)gtag('event',n,p||{{}})}}
 (function(){{var v=null;try{{v=localStorage.getItem('dcCk')}}catch(e){{}}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false}})();
 document.addEventListener('click',function(e){{var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
-if(/\\.exe($|\\?)/i.test(h))dcEv('dc_com_download_click',{{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname}});
+if(/\\.exe($|[?&])/i.test(h))dcEv('dc_com_download_click',{{product:/HardDrive/i.test(h)?'hdd':/HealthCheck/i.test(h)?'health':'card',page:location.pathname}});
 else if(/buy\\.stripe\\.com/.test(h))dcEv('dc_com_buy_click',{{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname}})}});
 </script>"""
 
@@ -125,16 +125,21 @@ CUR_NOTE = ('<div class="curnote"><span aria-hidden="true">💱</span><div>Price
             'automatically. Payment is handled by Stripe.</div></div>')
 
 
+
+def dl_link(url):
+    """Download buttons go through the cookieless counter on dataclinic.co.uk (snippet 18722), which redirects to the installer."""
+    return "https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=" + url.rsplit("/", 1)[1] + "&amp;src=com"
+
 def dl_hdd(label="Download free for Windows", cls="btn"):
-    return f'<a class="{cls}" href="{HDD["installer"]}">{label}</a>'
+    return f'<a class="{cls}" href="{dl_link(HDD["installer"])}">{label}</a>'
 
 
 def dl_health(label="Download free for Windows", cls="btn"):
-    return f'<a class="{cls}" href="{HEALTH["installer"]}">{label}</a>'
+    return f'<a class="{cls}" href="{dl_link(HEALTH["installer"])}">{label}</a>'
 
 
 def dl_card(label="Download free for Windows", cls="btn"):
-    return f'<a class="{cls}" href="{CARD["installer"]}">{label}</a>'
+    return f'<a class="{cls}" href="{dl_link(CARD["installer"])}">{label}</a>'
 
 
 NOT_WINDOWS = ('<p class="notwin" hidden>This software runs on a Windows 10 or 11 PC — not on phones, tablets or Macs. '

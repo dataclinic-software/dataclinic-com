@@ -39,7 +39,7 @@
 </div>
 <div id="ty-mail" hidden><p class="intro">Your key is in your email.</p></div>
 <div id="ty-late" hidden><p class="intro">Your key will arrive by email within a few minutes. If it hasn't come in 30 minutes, contact <a href="mailto:support@dataclinic.com">support@dataclinic.com</a>.</p></div>
-<p style="margin-top:26px"><a class="btn" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download Data Clinic Recovery for Hard Drives</a></p>
+<p style="margin-top:26px"><a class="btn" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download Data Clinic Recovery for Hard Drives</a></p>
 </div></section>
 <script>
 (function(){
@@ -89,7 +89,7 @@ function dcCookieSettings(){document.getElementById('ckbar').hidden=false;return
 function dcEv(n,p){if(window.dcGaOn)gtag('event',n,p||{})}
 (function(){var v=null;try{v=localStorage.getItem('dcCk')}catch(e){}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
-if(/\.exe($|\?)/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname});
+if(/\.exe($|[?&])/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':/HealthCheck/i.test(h)?'health':'card',page:location.pathname});
 else if(/buy\.stripe\.com/.test(h))dcEv('dc_com_buy_click',{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname})});
 </script>
 </body></html>

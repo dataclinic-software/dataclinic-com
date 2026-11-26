@@ -64,11 +64,11 @@
 </ul>
 
 </div>
-<aside class="side"><div class="sidebox"><h3>Recovery for Hard Drives</h3><p>Free scan and preview. Strictly read-only. Checks drive health first.</p><a class="btn sm" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download free</a><p class="small"><a href="/hard-drive-recovery-software/">How it works →</a></p></div></aside>
+<aside class="side"><div class="sidebox"><h3>Recovery for Hard Drives</h3><p>Free scan and preview. Strictly read-only. Checks drive health first.</p><a class="btn sm" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download free</a><p class="small"><a href="/hard-drive-recovery-software/">How it works →</a></p></div></aside>
 </div></section>
 </article>
 <section id="faq" class="faq"><div class="wrap narrow"><h2>Questions</h2><details><summary>Does Shift+Delete delete a file permanently?</summary><p>It skips the Recycle Bin, but on a hard drive the data stays where it was until it's overwritten, so it can often be recovered. On an SSD it's usually erased by the drive within minutes.</p></details><details><summary>How long do I have to recover a deleted file?</summary><p>On a hard drive, until something overwrites it — which could be minutes on a busy system drive, or months on an external drive you don't use. Stop using the drive as soon as you notice.</p></details><details><summary>Can I recover deleted files without software?</summary><p>Only from a copy: the Recycle Bin, a cloud service's deleted-files folder, File History or another backup. Once those are empty, you need recovery software.</p></details><details><summary>Is the scan free?</summary><p>Yes. Scanning and previewing are free; a licence is needed only to save the recovered files.</p></details></div></section>
-<section class="band"><div class="wrap"><h2>See what's recoverable — free</h2><p>Scan and preview for free on Windows 10 or 11. Pay only to save files.</p><a class="btn" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download Recovery for Hard Drives</a></div></section>
+<section class="band"><div class="wrap"><h2>See what's recoverable — free</h2><p>Scan and preview for free on Windows 10 or 11. Pay only to save files.</p><a class="btn" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download Recovery for Hard Drives</a></div></section>
 </main>
 <footer class="ftr"><div class="wrap">
 <div class="cols">
@@ -97,7 +97,7 @@ function dcCookieSettings(){document.getElementById('ckbar').hidden=false;return
 function dcEv(n,p){if(window.dcGaOn)gtag('event',n,p||{})}
 (function(){var v=null;try{v=localStorage.getItem('dcCk')}catch(e){}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
-if(/\.exe($|\?)/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname});
+if(/\.exe($|[?&])/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':/HealthCheck/i.test(h)?'health':'card',page:location.pathname});
 else if(/buy\.stripe\.com/.test(h))dcEv('dc_com_buy_click',{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname})});
 </script>
 </body></html>

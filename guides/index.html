@@ -58,7 +58,7 @@ function dcCookieSettings(){document.getElementById('ckbar').hidden=false;return
 function dcEv(n,p){if(window.dcGaOn)gtag('event',n,p||{})}
 (function(){var v=null;try{v=localStorage.getItem('dcCk')}catch(e){}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
-if(/\.exe($|\?)/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname});
+if(/\.exe($|[?&])/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':/HealthCheck/i.test(h)?'health':'card',page:location.pathname});
 else if(/buy\.stripe\.com/.test(h))dcEv('dc_com_buy_click',{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname})});
 </script>
 </body></html>

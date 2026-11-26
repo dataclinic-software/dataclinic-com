@@ -57,11 +57,11 @@
 <p>For SD and microSD cards from cameras and phones, use our free <a href="/memory-card-recovery-software/">memory card tool</a>.</p>
 
 </div>
-<aside class="side"><div class="sidebox"><h3>Recovery for Hard Drives</h3><p>Free scan and preview. Strictly read-only. Checks drive health first.</p><a class="btn sm" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download free</a><p class="small"><a href="/hard-drive-recovery-software/">How it works →</a></p></div></aside>
+<aside class="side"><div class="sidebox"><h3>Recovery for Hard Drives</h3><p>Free scan and preview. Strictly read-only. Checks drive health first.</p><a class="btn sm" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download free</a><p class="small"><a href="/hard-drive-recovery-software/">How it works →</a></p></div></aside>
 </div></section>
 </article>
 <section id="faq" class="faq"><div class="wrap narrow"><h2>Questions</h2><details><summary>Can you unformat a USB stick?</summary><p>Not in place — but you can recover the files from it onto another drive, which gets you the same result safely.</p></details><details><summary>I formatted the stick and copied new files onto it.</summary><p>Some old files will be overwritten. Stop now and scan; what's left may still be recoverable.</p></details><details><summary>Why does the health check say “not available”?</summary><p>USB sticks don't have a health report (SMART) the way hard drives do.</p></details></div></section>
-<section class="band"><div class="wrap"><h2>See what's recoverable — free</h2><p>Scan and preview for free on Windows 10 or 11. Pay only to save files.</p><a class="btn" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download Recovery for Hard Drives</a></div></section>
+<section class="band"><div class="wrap"><h2>See what's recoverable — free</h2><p>Scan and preview for free on Windows 10 or 11. Pay only to save files.</p><a class="btn" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download Recovery for Hard Drives</a></div></section>
 </main>
 <footer class="ftr"><div class="wrap">
 <div class="cols">
@@ -90,7 +90,7 @@ function dcCookieSettings(){document.getElementById('ckbar').hidden=false;return
 function dcEv(n,p){if(window.dcGaOn)gtag('event',n,p||{})}
 (function(){var v=null;try{v=localStorage.getItem('dcCk')}catch(e){}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
-if(/\.exe($|\?)/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname});
+if(/\.exe($|[?&])/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':/HealthCheck/i.test(h)?'health':'card',page:location.pathname});
 else if(/buy\.stripe\.com/.test(h))dcEv('dc_com_buy_click',{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname})});
 </script>
 </body></html>

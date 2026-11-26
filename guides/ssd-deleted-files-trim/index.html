@@ -53,11 +53,11 @@
 <p>Because SSD deletions are so final, a backup is the only reliable protection: File History or another backup tool, plus a cloud service with a deleted-files folder.</p>
 
 </div>
-<aside class="side"><div class="sidebox"><h3>Recovery for Hard Drives</h3><p>Free scan and preview. Strictly read-only. Checks drive health first.</p><a class="btn sm" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download free</a><p class="small"><a href="/hard-drive-recovery-software/">How it works →</a></p></div></aside>
+<aside class="side"><div class="sidebox"><h3>Recovery for Hard Drives</h3><p>Free scan and preview. Strictly read-only. Checks drive health first.</p><a class="btn sm" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download free</a><p class="small"><a href="/hard-drive-recovery-software/">How it works →</a></p></div></aside>
 </div></section>
 </article>
 <section id="faq" class="faq"><div class="wrap narrow"><h2>Questions</h2><details><summary>Does a lab have special tools to undo TRIM?</summary><p>No. Once an SSD has erased the blocks, the data no longer exists on the chips.</p></details><details><summary>Is TRIM always on?</summary><p>On Windows 10 and 11 with an internal SSD, almost always. Some external enclosures and older systems don't pass it through.</p></details><details><summary>Can I recover files from a formatted SSD?</summary><p>Usually not — a quick format on an SSD trims the whole drive.</p></details></div></section>
-<section class="band"><div class="wrap"><h2>See what's recoverable — free</h2><p>Scan and preview for free on Windows 10 or 11. Pay only to save files.</p><a class="btn" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download Recovery for Hard Drives</a></div></section>
+<section class="band"><div class="wrap"><h2>See what's recoverable — free</h2><p>Scan and preview for free on Windows 10 or 11. Pay only to save files.</p><a class="btn" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download Recovery for Hard Drives</a></div></section>
 </main>
 <footer class="ftr"><div class="wrap">
 <div class="cols">
@@ -86,7 +86,7 @@ function dcCookieSettings(){document.getElementById('ckbar').hidden=false;return
 function dcEv(n,p){if(window.dcGaOn)gtag('event',n,p||{})}
 (function(){var v=null;try{v=localStorage.getItem('dcCk')}catch(e){}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
-if(/\.exe($|\?)/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname});
+if(/\.exe($|[?&])/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':/HealthCheck/i.test(h)?'health':'card',page:location.pathname});
 else if(/buy\.stripe\.com/.test(h))dcEv('dc_com_buy_click',{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname})});
 </script>
 </body></html>

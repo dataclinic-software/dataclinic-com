@@ -35,19 +35,19 @@
 <div class="dlbox"><h2>Recovery for Hard Drives</h2>
 <p>Hard drives, SSDs and USB sticks. Free scan and preview; a licence to save recovered files.</p>
 <p class="meta">Version 1.1.2 · November 2026 · 59.7 MB · needs administrator rights</p>
-<a class="btn" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-HardDriveRecovery-Setup-1.1.2.exe">Download 1.1.2</a>
+<a class="btn" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-HardDriveRecovery-Setup-1.1.2.exe&amp;src=com">Download 1.1.2</a>
 <p class="meta">SHA-256: <code>b3e83a2691797e29deb8083429875543e5e0eb0378df692c63b698d6e1d32a04</code></p>
 <p class="small"><a href="/hard-drive-recovery-software/">Product details</a> · What's new: Fixes a false “signs of physical failure” warning that some healthy drives in USB cases could get after a quick scan. The scan screen now shows steady progress from start to finish, and the program can send anonymous usage counts, which you can turn off in Settings. Install it over 1.1.1; your licence key carries over.</p></div>
 <div class="dlbox"><h2>Recovery for Memory Cards</h2>
 <p>SD and microSD cards. Completely free.</p>
 <p class="meta">Version 1.1.0 · 28-10-2026 · 59 MB</p>
-<a class="btn" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-MemoryCardRecovery-Setup-1.1.0.exe">Download 1.1.0</a>
+<a class="btn" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-MemoryCardRecovery-Setup-1.1.0.exe&amp;src=com">Download 1.1.0</a>
 <p class="meta">SHA-256: <code>60216bacd1d1fb396fe56de66a5ce56e760a32f223a3c23ff35142fc694a48f3</code></p>
 <p class="small"><a href="/memory-card-recovery-software/">Product details</a></p></div>
 <div class="dlbox"><h2>Drive Health Check</h2>
 <p>Checks every drive's health in plain words. Completely free. Never writes to a drive.</p>
 <p class="meta">Version 1.0.0 (beta) · November 2026 · 59.4 MB · asks for administrator permission</p>
-<a class="btn" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-DriveHealthCheck-Setup-1.0.0.exe">Download 1.0.0</a>
+<a class="btn" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-DriveHealthCheck-Setup-1.0.0.exe&amp;src=com">Download 1.0.0</a>
 <p class="meta">SHA-256: <code>5e4525dee4b2ae65dba4c17c3b4406b0679feaff558cf8d14a948751b8245308</code></p>
 <p class="small"><a href="/drive-health-check/">Product details</a></p></div>
 </div>
@@ -91,7 +91,7 @@ function dcCookieSettings(){document.getElementById('ckbar').hidden=false;return
 function dcEv(n,p){if(window.dcGaOn)gtag('event',n,p||{})}
 (function(){var v=null;try{v=localStorage.getItem('dcCk')}catch(e){}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
-if(/\.exe($|\?)/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname});
+if(/\.exe($|[?&])/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':/HealthCheck/i.test(h)?'health':'card',page:location.pathname});
 else if(/buy\.stripe\.com/.test(h))dcEv('dc_com_buy_click',{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname})});
 </script>
 </body></html>

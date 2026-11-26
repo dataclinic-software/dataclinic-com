@@ -61,11 +61,11 @@
 <p>Camera raw formats not in the list above, or a card in a USB card reader with other file types? <a href="/hard-drive-recovery-software/">Recovery for Hard Drives</a> can also scan a card in a reader and recognises many more formats.</p>
 
 </div>
-<aside class="side"><div class="sidebox"><h3>Recovery for Memory Cards</h3><p>Free for SD and microSD cards. No registration.</p><a class="btn sm" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-MemoryCardRecovery-Setup-1.1.0.exe">Download free</a><p class="small"><a href="/memory-card-recovery-software/">How it works →</a></p></div></aside>
+<aside class="side"><div class="sidebox"><h3>Recovery for Memory Cards</h3><p>Free for SD and microSD cards. No registration.</p><a class="btn sm" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-MemoryCardRecovery-Setup-1.1.0.exe&amp;src=com">Download free</a><p class="small"><a href="/memory-card-recovery-software/">How it works →</a></p></div></aside>
 </div></section>
 </article>
 <section id="faq" class="faq"><div class="wrap narrow"><h2>Questions</h2><details><summary>Can I recover photos after formatting an SD card?</summary><p>Often, yes, if you haven't taken new photos since. Run a deep scan.</p></details><details><summary>Is the memory card software really free?</summary><p>Yes — no trial, no registration and no upsell inside the app.</p></details><details><summary>Can I recover photos from my phone&#x27;s internal storage?</summary><p>Not with this software — it works on removable SD and microSD cards. Phone internal storage is encrypted and needs different methods.</p></details><details><summary>Does it work on a Mac?</summary><p>Not yet — it runs on Windows 10 and 11.</p></details></div></section>
-<section class="band"><div class="wrap"><h2>Recover your photos — free</h2><p>Data Clinic Recovery for Memory Cards. Windows 10 or 11.</p><a class="btn" href="https://www.dataclinic.co.uk/drive-rescue/DataClinic-MemoryCardRecovery-Setup-1.1.0.exe">Download free</a></div></section>
+<section class="band"><div class="wrap"><h2>Recover your photos — free</h2><p>Data Clinic Recovery for Memory Cards. Windows 10 or 11.</p><a class="btn" href="https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=DataClinic-MemoryCardRecovery-Setup-1.1.0.exe&amp;src=com">Download free</a></div></section>
 </main>
 <footer class="ftr"><div class="wrap">
 <div class="cols">
@@ -94,7 +94,7 @@ function dcCookieSettings(){document.getElementById('ckbar').hidden=false;return
 function dcEv(n,p){if(window.dcGaOn)gtag('event',n,p||{})}
 (function(){var v=null;try{v=localStorage.getItem('dcCk')}catch(e){}if(v==='y')dcGa();else if(v!=='n')document.getElementById('ckbar').hidden=false})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.href||'';
-if(/\.exe($|\?)/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':'card',page:location.pathname});
+if(/\.exe($|[?&])/i.test(h))dcEv('dc_com_download_click',{product:/HardDrive/i.test(h)?'hdd':/HealthCheck/i.test(h)?'health':'card',page:location.pathname});
 else if(/buy\.stripe\.com/.test(h))dcEv('dc_com_buy_click',{plan:(/bJe5k/.test(h)?'personal_28d':/dRm6o/.test(h)?'personal_1y':'business_1y'),page:location.pathname})});
 </script>
 </body></html>
