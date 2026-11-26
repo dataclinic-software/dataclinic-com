@@ -31,6 +31,11 @@ For Claude sessions and scheduled tasks. Read before changing the site. Owner: C
 - API access: service account `dataclinic-reporter@api-project-1006475031190.iam.gserviceaccount.com`. Helper on the Mac: `Data Clinic - Online Diagnosis Tool/dataclinic-com/ops/gapi.py` (`gsc(path)`, `ga4(endpoint, body)`).
 - Stripe: account "Data Clinic Software"; payment links carry `client_reference_id=web_com_<page>`. After-payment redirect → https://www.dataclinic.com/licence/?session={CHECKOUT_SESSION_ID} (rollback: the .co.uk product page with the same query).
 
+### Download counts (cookieless) — added 26-11-2026
+- All .com download buttons go through the counter on dataclinic.co.uk: `https://www.dataclinic.co.uk/wp-json/dc/v1/dl?f=<installer file name>&src=com` (WPCode snippet 18722 "dc-download-counter"). It counts the download (no cookies, no personal data, robots/curl skipped) and 302s to `/drive-rescue/<file>`. Built by `dl_link()` in layout.py, so new versions in config.py are picked up automatically. Schema `downloadUrl` stays the direct file.
+- Read counts with the WP app password (Mac: wp-credentials.env, user `claude`): `GET https://www.dataclinic.co.uk/wp-json/dc/v1/dl-stats` → `{"yyyy-mm-dd|file|src": n}` (UTC days). Ignore src `claude-test`.
+- GA4 still only sees visitors who accept cookies; report the counter as the true .com download figure, GA4 / Search Console for visits.
+
 ## UK twins (hreflang on both sites)
 - .com side: `uk_twin=` argument on `page()` in `pages.py`/`guides.py`.
 - .co.uk side: WPCode PHP snippet **18648** "dc-hreflang-com-twins" (frontend only) holds the path → .com URL map. **Add a line there whenever a new .com page gets a .co.uk twin**, then check both pages show matching hreflang.
