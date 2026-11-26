@@ -544,7 +544,7 @@ NOTFOUND = page("/404.html", "Page not found — Data Clinic Recovery Software",
 HEALTH_APP = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": HEALTH["name"],
               "operatingSystem": "Windows 10, Windows 11 (64-bit)", "applicationCategory": "UtilitiesApplication",
               "softwareVersion": HEALTH["version"], "downloadUrl": HEALTH["installer"], "fileSize": HEALTH["size"],
-              "url": SITE + "/drive-health-check/", "isAccessibleForFree": True,
+              "url": SITE + "/drive-health-check/", "image": SITE + "/img/hc-01-your-drives.jpg", "isAccessibleForFree": True,
               "publisher": {"@type": "Organization", "name": "Data Clinic Ltd"},
               "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"},
               "featureList": ["Checks hard drives, SATA and NVMe SSDs, USB drives and the system drive",
@@ -575,12 +575,7 @@ HEALTH_PAGE = page("/drive-health-check/", "Free Drive Health Check for Windows 
 <p class="fine">Windows 10/11, 64-bit · asks for administrator permission · version {HEALTH['version']} (beta) · signed by Data Clinic Ltd</p>
 {NOT_WINDOWS}
 </div>
-<div class="hcv" aria-hidden="true">
-<div><span style="background:#2fb36b"></span>Healthy</div>
-<div><span style="background:#f0a500"></span>Back it up now</div>
-<div><span style="background:#c8102e"></span>Stop using it</div>
-<div><span style="background:#9aa3af"></span>Can't read the health report</div>
-</div>
+<div class="shot"><img src="/img/hc-01-your-drives.jpg" alt="Drive Health Check listing every drive in a PC with its verdict: three marked Healthy and a USB stick marked Can't read the health report" width="1280" height="520" fetchpriority="high"></div>
 </div></section>
 <div class="trust"><div class="wrap"><span>Free, no licence key</span><span>Never writes to a drive</span><span>HDD, SSD, NVMe and USB</span><span>PDF report</span><span>13 languages</span></div></div>
 
@@ -596,6 +591,18 @@ HEALTH_PAGE = page("/drive-health-check/", "Free Drive Health Check for Windows 
 </div></section>
 
 <section class="alt"><div class="wrap">
+<div class="center"><h2>What it looks like when a drive is in trouble</h2>
+<p class="intro">Most drives come back Healthy. When one doesn't, the verdict says so plainly and tells you what to do next.</p></div>
+<div class="hcshots">
+<figure><img src="/img/hc-02-back-it-up-now.jpg" alt="Back it up now verdict: an SSD that has used 104% of its rated life" width="1280" height="248" loading="lazy"><figcaption><b>Back it up now.</b> An SSD past its rated life still works, but it's time to copy your files off.</figcaption></figure>
+<figure><img src="/img/hc-03-stop-using-it.jpg" alt="Stop using this drive now verdict: sectors waiting to be retried and sectors that could not be read or corrected" width="1279" height="303" loading="lazy"><figcaption><b>Stop using it.</b> A hard drive reporting sectors it can't read, with the reasons in plain words.</figcaption></figure>
+<figure><img src="/img/hc-04-surface-test-struggling.jpg" alt="Read-only surface test stopped by itself after finding 16 unreadable areas" width="1280" height="444" loading="lazy"><figcaption><b>The surface test stops itself.</b> When a drive starts struggling to read, the test stops rather than wearing it further.</figcaption></figure>
+<figure><img src="/img/hc-05-surface-test-passed.jpg" alt="Read-only surface test completed: every part of the drive was read without an error" width="1280" height="482" loading="lazy"><figcaption><b>A clean result.</b> A healthy drive read from end to end without a single error.</figcaption></figure>
+</div>
+<p class="center muted small">The two warning examples were produced on simulated failing drives in our test build.</p>
+</div></section>
+
+<section><div class="wrap">
 <div class="center"><h2>What else it does</h2></div>
 <div class="cards">
 <div class="card"><h3>Optional read-only surface test</h3><p>Reads every part of the drive once. It stops by itself if the drive starts struggling, and it's never offered on a drive that is already failing.</p></div>
