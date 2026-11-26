@@ -1,0 +1,6 @@
+# dataclinic.com content log
+
+One line per scheduled content run: date · NEW/REFRESH · URL · target query · baseline (impressions / position) · internal links added.
+
+- 2026-11-26 · NEW · https://www.dataclinic.com/guides/recuva-not-finding-files/ · "recuva not finding files" (cluster list: competitor page) · baseline: none (new page; Mac/GSC unreachable this run) · links in: recover-deleted-files-recycle-bin, recover-formatted-hard-drive, is-my-hard-drive-failing; links out: ssd-deleted-files-trim, recover-formatted-hard-drive, drive-shows-raw, read-mac-drive-on-windows, /hard-drive-recovery-software/, /pricing/
+- [2026-11-26 11:24] dc-com-content: NEW https://www.dataclinic.com/guides/recuva-not-finding-files/ (target "recuva not finding files") | NEEDS: UK twin to add to WPCode snippet 18648: /recuva-alternative/ → https://www.dataclinic.com/guides/recuva-not-finding-files/ ; Mac folder not connected to this run, so no Search Console data, no sitemap resubmit and no dc-activity-log.md line (connect "Data Clinic - Online Diagnosis Tool" to the scheduled task) ; .co.uk /recuva-alternative/ comparison table still says our version is 1.1.0 (current 1.1.2) | HEALTH: ok
