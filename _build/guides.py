@@ -39,6 +39,7 @@ dict(slug="recover-deleted-files-recycle-bin", product="hdd",
 <h2>Recover the files with Recovery for Hard Drives</h2>
 {SW_STEPS.format(scan="Run a <b>quick scan</b>. It reads the drive's file tables and lists deleted files with their original names and folders — including files emptied from the Recycle Bin on NTFS, exFAT and FAT32 drives. If what you need isn't there, try a <b>deep scan</b> (under “Other ways”), which also finds files by their content.")}
 <p>Not sure where to look? Turn on <b>Ask Rex AI</b> and type what you lost — <i>"the folder called Accounts 2025 I deleted yesterday"</i>. Rex proposes a plan, and nothing starts until you press Yes.</p>
+<p>Already tried another program, such as Recuva, and found nothing? <a href="/guides/recuva-not-finding-files/">Why a scan comes back empty, and when a second tool can help →</a></p>
 
 <h2>Honest limits</h2>
 <ul>
@@ -85,6 +86,7 @@ dict(slug="recover-formatted-hard-drive", product="hdd", twin=CO_UK + "/recover-
 <li>Large videos are often stored in fragments; a deep scan may recover them incomplete.</li>
 <li>Files found only by content have no original names or folders.</li>
 </ul>
+<p>Tried Recuva or another free tool after the format and found little? <a href="/guides/recuva-not-finding-files/">Recuva not finding files →</a></p>
 """,
  faq=[("Can a formatted hard drive be recovered?", "Usually, after a quick format, if nothing much has been written to it since. After a full format in Windows Vista or later, no — the data has been overwritten with zeros."),
       ("Why are my recovered files called Rescued_0001?", "On an NTFS drive, formatting clears the file table where names are kept. Files found by their content alone come back with numbered names."),
@@ -322,11 +324,72 @@ dict(slug="is-my-hard-drive-failing", product="hdd",
 <ul>
 <li>Don't put the drive in the freezer, tap it, or open it — opening a drive outside a clean room ruins it.</li>
 <li>Don't run CHKDSK or “repair” tools on a failing drive.</li>
-<li>Don't keep trying different recovery programs; each scan works the failing hardware.</li>
+<li>Don't keep trying different recovery programs; each scan works the failing hardware. <a href="/guides/recuva-not-finding-files/">When a second tool is worth it, and when it isn't →</a></li>
 </ul>
 """,
  faq=[("Can software fix a clicking hard drive?", "No. Clicking is almost always a mechanical fault. Software makes the drive work harder; a lab replaces or works around the failed parts."),
       ("What is SMART?", "Self-Monitoring, Analysis and Reporting Technology — a health report most hard drives and SSDs keep about themselves. Recovery for Hard Drives reads it before scanning. Some USB cases don't pass it through, and USB sticks don't have one."),
       ("My drive is just slow. Is it failing?", "Possibly. Check its SMART report; if it shows reallocated or pending sectors, copy your data off once and replace the drive."),
       ("Should I try recovery software on a failing drive?", "Not if it reports failure, clicks, or isn't detected. If it only shows early warnings, image it once and recover from the image.")]),
+# ------------------------------------------------------------------ 11
+dict(slug="recuva-not-finding-files", product="hdd", twin=CO_UK + "/recuva-alternative/", published="2026-11-26",
+ title="Recuva Not Finding Your Files? Why It Happens and What to Try Next",
+ h1="Recuva not finding your files? Why, and what to try next",
+ desc="Recuva found nothing, or the files won't open? The usual reasons, which ones another tool can fix and which no software can, and how to get a safe second opinion for free.",
+ answer="When Recuva comes back empty, the reason usually matters more than the program. Files that have been overwritten, or deleted from an SSD, are gone and no other tool can change that. But if you only ran the normal scan, filtered by file type, or the drive was formatted, shows as RAW or came from a Mac, a deep scan or a tool that reads the drive differently can often find more. Stop writing to the drive first — and if it clicks, stalls or disconnects, stop altogether.",
+ body=f"""
+<h2>Do this first</h2>
+<ul>
+<li><b>Stop writing to the drive.</b> Don't install anything on it, save to it, or keep using it. Each write can land on the files you want.</li>
+<li><b>Listen to it.</b> Clicking, beeping, a scan that crawls or freezes at the same point, or a drive that drops out of Windows are signs of a physical fault.</li>
+</ul>
+{STOP}
+
+<h2>Why Recuva finds nothing — and whether anything else can</h2>
+<p>Match what happened to the closest cause. Some are worth a second try; some aren't, and it's better to know that before you pay for anything.</p>
+<div style="overflow-x:auto"><table class="tbl">
+<thead><tr><th>Likely cause</th><th>What's going on</th><th>Can another tool help?</th></tr></thead>
+<tbody>
+<tr><td>Only the normal scan was run</td><td>A normal scan reads the drive's file table. Recuva's own help says that if it didn't find your files, you can turn on <b>Deep Scan</b> in the Options dialog, which "will take much longer (possibly, hours)" (<a href="https://support.ccleaner.com/articles/en_US/Master_Article/using-recuva-s-advanced-mode" rel="nofollow noopener" target="_blank">CCleaner support</a>).</td><td>Try Recuva's Deep Scan first, once, on a healthy drive.</td></tr>
+<tr><td>The search was narrowed</td><td>Recuva's wizard and advanced mode let you pick a file type, a file name and a drive. A wrong guess — "Pictures" when the file was a PDF, or the wrong drive letter — hides what you want.</td><td>Rerun with all files and the right drive.</td></tr>
+<tr><td>The drive is an SSD</td><td>Most SSDs erase deleted files themselves within minutes (TRIM). <a href="/guides/ssd-deleted-files-trim/">Why SSDs are different →</a></td><td>Usually not. The data no longer exists.</td></tr>
+<tr><td>The files were overwritten</td><td>Windows has reused the space for something new.</td><td>No — not any software, and not a lab.</td></tr>
+<tr><td>The drive was formatted</td><td>The format replaced the file table, so the old list of files has gone. <a href="/guides/recover-formatted-hard-drive/">Formatted drive guide →</a></td><td>Often, with a deep scan that recognises files by their content.</td></tr>
+<tr><td>Windows says the drive is RAW or needs formatting</td><td>The file system can't be read, often after the drive was unplugged mid-write. <a href="/guides/drive-shows-raw/">RAW drive guide →</a></td><td>Often, on a healthy drive. Don't format it.</td></tr>
+<tr><td>The drive came from a Mac</td><td>It's formatted APFS or HFS+, which Windows can't read. <a href="/guides/read-mac-drive-on-windows/">Mac drive on Windows →</a></td><td>Yes, with a tool that reads Mac file systems.</td></tr>
+<tr><td>The drive isn't listed, shows 0 bytes, or the scan stalls</td><td>A fault in the drive itself.</td><td>No. Stop — this needs a lab.</td></tr>
+</tbody></table></div>
+<p>Files that won't open after recovery were usually partly overwritten, stored in fragments, or read from a drive that is starting to fail. Recuva colours each result — "green for excellent, orange for acceptable, and red for unlikely" — and doesn't show previews for images it likely can't recover (<a href="https://support.ccleaner.com/articles/en_US/Master_Article/using-recuva-s-advanced-mode" rel="nofollow noopener" target="_blank">CCleaner support</a>). Red results rarely improve in another program.</p>
+
+<h2>What not to do</h2>
+<ul>
+<li><b>Don't install the next tool on the same drive</b>, or save recovered files back onto it.</li>
+<li><b>Don't run scan after scan with different programs</b> on a drive that is slow, noisy or disconnecting. Each pass works failing hardware harder.</li>
+<li><b>Don't format the drive or run CHKDSK</b> to “fix” it first. Both write to it.</li>
+</ul>
+
+<h2>A free second opinion with Recovery for Hard Drives</h2>
+<p>If the cause is one that another tool can help with — a formatted, RAW or Mac drive, or a deep scan that came up short — <a href="/hard-drive-recovery-software/">Data Clinic Recovery for Hard Drives</a> reads the drive a different way, and scanning and previewing are free, so you can see what it finds before you pay anything.</p>
+<div class="hcshots">
+<figure><img src="/img/hdd-01-drive-picker.jpg" alt="The drive picker lists only drives that can safely be read" width="925" height="511" loading="lazy"><figcaption>Choose drive: the drive Windows runs from never appears, and the health report is read before anything is scanned.</figcaption></figure>
+<figure><img src="/img/hdd-02-results-screen.jpg" alt="Scan results with previews, folders and filters" width="1400" height="724" loading="lazy"><figcaption>Pick files: previews, folders and filters, and every file shows whether it can really be recovered.</figcaption></figure>
+</div>
+{SW_STEPS.format(scan="Start with the recommended scan. A <b>quick scan</b> reads the file tables of NTFS, exFAT and FAT32 drives — and Mac APFS, HFS+ and HFS — and lists files with their names and folders. If that isn't enough, a <b>deep scan</b> (under “Other ways”) reads the file tables first, then the whole drive, recognising photos, video, music, PDF and Office documents, Outlook files and archives by their content. If the drive shows warning signs, the software recommends <b>imaging it first</b>, so it is read only once.")}
+<p>Not sure which scan to use? Turn on <b>Ask Rex AI</b> and describe what you lost. Rex proposes a plan and nothing starts until you press Yes. Licences to save files start at £39.99 for 28 days, with no renewal — <a href="/pricing/">see prices</a>.</p>
+
+<h2>Honest limits</h2>
+<ul>
+<li>No software, ours included, brings back overwritten files or files an SSD has erased. The software marks these rather than pretending.</li>
+<li>It never scans the drive Windows is running from. If the file was on your C: drive, take the drive out and connect it to another Windows PC.</li>
+<li>It can't read BitLocker-encrypted drives. Files found only by content come back with numbered names, not their originals.</li>
+<li>If the drive clicks, isn't detected or is physically damaged, stop — use a data recovery lab. {LAB}</li>
+</ul>
+<p>If Recuva has already found your files and they open properly, you're done: save them to another drive and there is nothing more to buy.</p>
+""",
+ faq=[("Why does Recuva say it found no files?", "Usually because the files were overwritten, the drive is an SSD that has erased them, the scan was limited to one file type or the wrong drive, or the drive was formatted, is RAW or came from a Mac. Only the last few are worth another try."),
+      ("Should I turn on Recuva's Deep Scan?", "Yes, once, if the drive is healthy and the normal scan came up short. Recuva's help says it is set in the Options dialog and can take hours. Don't run it on a drive that clicks or keeps disconnecting."),
+      ("What do Recuva's green, orange and red dots mean?", "Recuva's help describes them as excellent, acceptable and unlikely chances of recovery. Red files have usually been at least partly overwritten, and another program is unlikely to do better."),
+      ("Can another program find files Recuva missed?", "Sometimes — mainly on formatted, RAW or Mac-formatted drives, where a different scan method or file system support makes the difference. Never for overwritten files or files an SSD has erased. With Recovery for Hard Drives the scan and preview are free, so you can check before you pay."),
+      ("Recuva recovered my files but they won't open. Why?", "They were probably partly overwritten, stored in fragments, or read from a drive that is starting to fail. If the drive has been slow or noisy, stop using it and read the signs of a failing drive."),
+      ("Is Recovery for Hard Drives free?", "Scanning and previewing are free. Saving recovered files needs a licence, from £39.99 for 28 days. It runs on Windows 10 and 11, 64-bit.")]),
 ]

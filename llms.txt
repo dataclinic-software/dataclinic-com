@@ -23,3 +23,4 @@
 - [Can deleted files be recovered from an SSD?](https://www.dataclinic.com/guides/ssd-deleted-files-trim/)
 - [Recover deleted or formatted photos from an SD card](https://www.dataclinic.com/guides/recover-deleted-photos-sd-card/)
 - [Is my hard drive failing? The signs, and when to stop](https://www.dataclinic.com/guides/is-my-hard-drive-failing/)
+- [Recuva not finding your files? Why, and what to try next](https://www.dataclinic.com/guides/recuva-not-finding-files/)
