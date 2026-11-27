@@ -32,11 +32,11 @@ CARD = {
 
 HEALTH = {
     "name": "Data Clinic Drive Health Check",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "released": "November 2026",
-    "installer": CO_UK + "/drive-rescue/DataClinic-DriveHealthCheck-Setup-1.0.0.exe",
-    "sha256": "5e4525dee4b2ae65dba4c17c3b4406b0679feaff558cf8d14a948751b8245308",
-    "size": "59.4 MB",
+    "installer": CO_UK + "/drive-rescue/DataClinic-DriveHealthCheck-Setup-1.1.0.exe",
+    "sha256": "a13bb1f1218070336ebd65eb105237571d7d6d19000efa95740031282d691209",
+    "size": "59.7 MB",
     "cot_uk": CO_UK + "/free-drive-health-check/",
 }
 

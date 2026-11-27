@@ -63,7 +63,7 @@ HOME = page("/", "Data Recovery Software for Windows — See Your Files Before Y
 <a class="prod" href="/memory-card-recovery-software/"><img src="/img/mc-device-picker.jpg" alt="" width="980" height="380" loading="lazy" style="object-fit:contain;background:#f5f7fa">
 <div><h3>Recovery for Memory Cards</h3><p>SD and microSD cards from cameras, drones and phones — deleted and formatted photos and videos.</p>
 <span class="pill free">Completely free</span></div></a>
-<a class="prod wide" href="/drive-health-check/"><div><h3>Drive Health Check <span class="pill">New · beta</span></h3><p>Is a drive about to fail? Checks every hard drive, SSD and USB drive in your PC and gives a plain verdict. Never writes to a drive.</p>
+<a class="prod wide" href="/drive-health-check/"><div><h3>Drive Health Check <span class="pill">New: Drive Health Monitor</span></h3><p>Is a drive about to fail? Checks every hard drive, SSD and USB drive in your PC and gives a plain verdict. Never writes to a drive.</p>
 <span class="pill free">Completely free</span></div></a>
 </div>
 <p class="center muted small">Not sure? <a href="/which-software/">Answer two questions</a> and we'll point you to the right one.</p>
@@ -406,7 +406,7 @@ DOWNLOAD = page("/download/", "Download Data Clinic Recovery Software for Window
 <p class="small"><a href="/memory-card-recovery-software/">Product details</a></p></div>
 <div class="dlbox"><h2>Drive Health Check</h2>
 <p>Checks every drive's health in plain words. Completely free. Never writes to a drive.</p>
-<p class="meta">Version {HEALTH['version']} (beta) · {HEALTH['released']} · {HEALTH['size']} · asks for administrator permission</p>
+<p class="meta">Version {HEALTH['version']} · {HEALTH['released']} · {HEALTH['size']} · asks for administrator permission</p>
 {dl_health("Download " + HEALTH['version'])}
 <p class="meta">SHA-256: <code>{HEALTH['sha256']}</code></p>
 <p class="small"><a href="/drive-health-check/">Product details</a></p></div>
@@ -539,7 +539,7 @@ NOTFOUND = page("/404.html", "Page not found — Data Clinic Recovery Software",
 <p><a class="btn" href="/">Home</a> <a class="btn line" href="/guides/">Guides</a> <a class="btn line" href="/download/">Downloads</a></p></div></section>""",
                 noindex=True)
 
-# ---------------------------------------------------------------- DRIVE HEALTH CHECK (1.0.0 beta, 25-11-2026)
+# ---------------------------------------------------------------- DRIVE HEALTH CHECK (1.0.0 beta 25-11-2026; 1.1.0 + Monitor 27-11-2026)
 # Facts only from the Software project's 1.0.0 release note. No lab mention on the .com (Chris, 25-11-2026).
 HEALTH_APP = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": HEALTH["name"],
               "operatingSystem": "Windows 10, Windows 11 (64-bit)", "applicationCategory": "UtilitiesApplication",
@@ -549,7 +549,7 @@ HEALTH_APP = {"@context": "https://schema.org", "@type": "SoftwareApplication", 
               "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"},
               "featureList": ["Checks hard drives, SATA and NVMe SSDs, USB drives and the system drive",
                               "Four plain-English verdicts with reasons", "Optional read-only surface test",
-                              "Save the report as a PDF", "Never writes to, repairs or formats any drive", "13 languages"]}
+                              "Save the report as a PDF", "Drive Health Monitor: warns you when a drive gets worse", "Never writes to, repairs or formats any drive", "13 languages"]}
 HEALTH_FAQ = [
     ("Is the Drive Health Check really free?", "Yes. It's free to download and use, with no licence key and no time limit."),
     ("Can it damage my drive or change anything on it?", "No. It never writes to, repairs or formats any drive. It reads each drive's own health report, and the optional surface test only reads. The surface test stops by itself if the drive starts struggling, and it is never offered on a drive that is already failing."),
@@ -559,8 +559,10 @@ HEALTH_FAQ = [
     ("Why does it ask for administrator permission?", "Windows only lets a program read a drive's health report if it has administrator permission, so the tool asks for it when it starts."),
     ("My drive says “Stop using it”. What should I do?", "Stop using the drive, and don't run recovery software on it — every further read of a failing drive can make things worse. If the files on it matter, take it to a professional data recovery lab."),
     ("Can it get my files back?", "No. It only checks drive health. If the drive is healthy and you've lost files, <a href=\"/hard-drive-recovery-software/\">Recovery for Hard Drives</a> can scan for them, with a free scan and preview."),
-    ("What does it send over the internet?", "Nothing about your drives or files. It checks for a newer version. It can also send anonymous usage counts, but that is off unless you tick “Send anonymous usage counts to Data Clinic”. The counts say which verdicts were shown, the type of drive and how many drives, whether a surface test was started and how it ended, and which next-step button was pressed. They never include drive models, serial numbers, sizes, file names or anything you type. See the <a href=\"/legal/privacy/\">privacy policy</a>."),
-    ("Is there a Mac version?", "Not yet. This first release is for Windows 10 and 11 (64-bit). A Mac version is planned after the Windows beta."),
+    ("What does it send over the internet?", "Nothing about your drives or files. It checks for a newer version. It can also send anonymous usage counts, but that is off unless you tick “Send anonymous usage counts to Data Clinic”. The counts say which verdicts were shown, the type of drive and how many drives, whether a surface test was started and how it ended, and which next-step button was pressed, when a Drive Health Monitor warning was shown (the kind of change and the drive's verdict), and your answer to the Monitor question. If you switch the Monitor on, it keeps each drive's last health reading and a short history of changes on your PC only — nothing about your drives leaves the PC. The counts never include drive models, serial numbers, sizes, file names or anything you type. See the <a href=\"/legal/privacy/\">privacy policy</a>."),
+    ("How do I stop the Monitor?", "Open the Health Check and untick “Watch my drives” at the top. Uninstalling the Health Check removes the Monitor too."),
+    ("What do the Monitor icon colours mean?", "<b>Green</b>: no warning signs. <b>Amber</b>: back the drive up now. <b>Red</b>: stop using the drive. <b>Grey</b>: Windows can't read the drive's health report, which is common with USB cases."),
+    ("Is there a Mac version?", "Not yet. This release is for Windows 10 and 11 (64-bit). A Mac version is planned after the Windows beta."),
     ("Windows says “Windows protected your PC”. Is it safe?", "The installer is signed by Data Clinic Ltd. Because it's a brand-new file, Windows may show this warning until enough people have downloaded it. Click <b>More info</b>, check the publisher says Data Clinic Ltd, then <b>Run anyway</b>."),
 ]
 HEALTH_PAGE = page("/drive-health-check/", "Free Drive Health Check for Windows — Is Your Drive Failing? | Data Clinic",
@@ -572,7 +574,7 @@ HEALTH_PAGE = page("/drive-health-check/", "Free Drive Health Check for Windows 
 <h1>Is your drive about to fail? <em>Find out in plain words — free.</em></h1>
 <p class="lead">The Data Clinic Drive Health Check reads each drive's own health report and tells you whether it's healthy, needs backing up now, or should not be used at all. It never writes to, repairs or formats any drive.</p>
 <div class="ctas">{dl_health(f"Free download — {HEALTH['size']}")}<a class="btn ghost" href="#verdicts">What it tells you</a></div>
-<p class="fine">Windows 10/11, 64-bit · asks for administrator permission · version {HEALTH['version']} (beta) · signed by Data Clinic Ltd</p>
+<p class="fine">Windows 10/11, 64-bit · asks for administrator permission · version {HEALTH['version']} · signed by Data Clinic Ltd</p>
 {NOT_WINDOWS}
 </div>
 <div class="shot"><img src="/img/hc-01-your-drives.jpg" alt="Drive Health Check listing every drive in a PC with its verdict: three marked Healthy and a USB stick marked Can't read the health report" width="1280" height="520" fetchpriority="high"></div>
@@ -588,6 +590,18 @@ HEALTH_PAGE = page("/drive-health-check/", "Free Drive Health Check for Windows 
 <div class="card"><h3>🔴 Stop using it</h3><p>The report shows the drive is failing. Every further use can make it worse — take it to a professional data recovery lab if the files matter.</p></div>
 <div class="card"><h3>⚪ Can't read the health report</h3><p>Common with USB cases and memory sticks, which often don't pass the report through to Windows.</p></div>
 </div>
+</div></section>
+
+<section id="monitor"><div class="wrap">
+<div class="center"><h2>New: the Drive Health Monitor warns you before a drive fails</h2>
+<p class="intro">After the first check, the Health Check offers to keep an eye on your drives. A small round icon by the clock re-reads each drive's own health report every few hours and whenever a drive is plugged in, and warns you the moment one gets worse — for example new damaged sectors, or a drive that has started to fail.</p></div>
+<div class="cards">
+<div class="card"><h3>🟢 Green</h3><p>No warning signs.</p></div>
+<div class="card"><h3>🟠 Amber</h3><p>Back the drive up now.</p></div>
+<div class="card"><h3>🔴 Red</h3><p>Stop using the drive.</p></div>
+<div class="card"><h3>⚪ Grey</h3><p>Windows can't read the drive's health report, which is common with USB cases.</p></div>
+</div>
+<p class="center">Like the Health Check, the Monitor only reads health reports — it never writes to a drive. Switch it on or off at any time with “Watch my drives” at the top of the Health Check. A drive's page and its PDF report list the changes the Monitor noticed.</p>
 </div></section>
 
 <section class="alt"><div class="wrap">
@@ -615,9 +629,10 @@ HEALTH_PAGE = page("/drive-health-check/", "Free Drive Health Check for Windows 
 <ul>
 <li>Windows 10 or 11, 64-bit. Nothing else to install — the download includes everything.</li>
 <li>Administrator permission: Windows asks when the program starts, because only programs with that permission can read a drive's health report.</li>
+<li>If you switch on the Drive Health Monitor, it starts by itself when you sign in to Windows. It is set up once, when you say Yes, so there is no administrator prompt each time.</li>
 <li>No Mac version yet. It's planned after the Windows beta.</li>
 </ul>
-<p class="muted small">What's new in {HEALTH['version']} (beta, {HEALTH['released']}): first release. Checks the health of every drive in your PC in plain words, offers an optional read-only surface test, and saves a PDF report. It never writes to any drive.</p>
+<p class="muted small">What's new in {HEALTH['version']} ({HEALTH['released']}): the Drive Health Monitor. It keeps an eye on your drives after the check and warns you the moment one gets worse. A drive's page and its PDF report now list the changes the Monitor noticed. Install it over 1.0.0. Version 1.0.0 (beta, November 2026) was the first release.</p>
 </div></section>
 {faq_block(HEALTH_FAQ)}
 {band("Check your drives — free", "Windows 10 and 11, 64-bit. It never writes to any drive.", dl_health("Free download"))}
